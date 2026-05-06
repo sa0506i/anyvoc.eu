@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — Anyvoc</title>
+    <meta
+      name="description"
+      content="Privacy policy for the Anyvoc mobile app and the websites at anyvoc.eu."
+    />
+    <meta name="theme-color" content="#050D1A" />
+    <link rel="alternate" hreflang="de" href="/legal/datenschutz.html" />
+    <link rel="alternate" hreflang="en" href="/en/legal/privacy.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <a href="/en/" class="brand">
+        <img src="/logo.png" alt="" />
+        <span>Anyvoc</span>
+      </a>
+      <nav class="lang-toggle" aria-label="Language">
+        <a href="/legal/datenschutz.html">DE</a>
+        <span class="sep" aria-hidden="true">|</span>
+        <a href="/en/legal/privacy.html" class="active" aria-current="true">EN</a>
+      </nav>
+    </header>
+
+    <article class="legal">
+      <a href="/en/" class="back-link">← Home</a>
+      <h1>Privacy Policy</h1>
+      <p class="lead">Last updated: 2026-05-05.</p>
+
+      <p>
+        This privacy policy explains which personal data the
+        <strong>Anyvoc</strong> mobile app and the associated websites at
+        anyvoc.eu process, for what purpose, and on what legal basis.
+      </p>
+
+      <h2>1. Controller</h2>
+      <p>The controller in the sense of the GDPR is:</p>
+      <address>
+        Sebastian Schulte am Hülse<br />
+        Hildebrandstr. 43<br />
+        70191 Stuttgart<br />
+        Germany<br />
+        Email: <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a>
+      </address>
+
+      <h2>2. Principle: your data stays on your device</h2>
+      <p>
+        Anyvoc stores all vocabulary, content, learning progress, and
+        settings <strong>locally on your device</strong> in a SQLite
+        database. There is no cloud sync, no server-side account for
+        your vocabulary data, and no analysis of your learning content
+        on our side.
+      </p>
+      <p>The only external connections the app makes are:</p>
+      <ul>
+        <li>An optional sign-in backend (Supabase), see section 4.</li>
+        <li>An LLM backend for vocabulary extraction and translation, see section 5.</li>
+      </ul>
+      <p>
+        If you use the app in guest mode and don't submit any content
+        for vocabulary extraction, <strong>no</strong> personal data is
+        transferred to external services.
+      </p>
+
+      <h2>3. Local storage on your device</h2>
+      <p>
+        The following categories are stored exclusively in the app's
+        local SQLite database:
+      </p>
+      <ul>
+        <li>Vocabulary, translations, CEFR levels, example contexts</li>
+        <li>Content (texts, links, OCR results from images)</li>
+        <li>Leitner progress, review days, quiz results</li>
+        <li>Settings (native / learning language, CEFR minimum, quiz mode)</li>
+        <li>Pro status flag (local, until in-app purchase activation)</li>
+        <li>Anonymous counter for guest-login budget (<code>guest_login_remaining</code>)</li>
+      </ul>
+      <p>This data does not leave your device. It is deleted when you:</p>
+      <ul>
+        <li>uninstall the app, or</li>
+        <li>
+          (when signed in) choose "Delete Account" in the app settings —
+          this irrevocably removes the local data on your device and the
+          server-side authentication data at Supabase.
+        </li>
+      </ul>
+      <p>
+        <strong>Legal basis:</strong> Art. 6 (1) (b) GDPR (performance
+        of contract — the app cannot fulfil its function without local
+        storage).
+      </p>
+
+      <h2>4. Authentication via Supabase (optional)</h2>
+      <p>
+        Anyvoc can be used without sign-in, in guest mode. Users sign in
+        for one of these reasons:
+      </p>
+      <ul>
+        <li>To unlock Pro features (in the future, once in-app purchase is active).</li>
+        <li>The guest-login budget is exhausted (3 guest sessions per device).</li>
+      </ul>
+      <p>The following data is sent to Supabase during sign-in:</p>
+      <ul>
+        <li>For email OTP: your email address + 6-digit verification code.</li>
+        <li>
+          For "Sign in with Apple" (iOS): the Apple-issued identity
+          token. Apple may generate a pseudonymous email
+          (<code>@privaterelay.appleid.com</code>); we only see this.
+        </li>
+        <li>
+          For "Sign in with Google" (Android): the Google identity
+          token with email address and Google user ID.
+        </li>
+      </ul>
+      <p>Supabase stores for your account:</p>
+      <ul>
+        <li>A unique user ID (UUID)</li>
+        <li>Your email address (or Apple pseudonym email)</li>
+        <li>Creation and last sign-in dates</li>
+        <li>Refresh / access tokens for session management</li>
+      </ul>
+      <p>
+        Tokens are stored encrypted on your device via
+        <code>expo-secure-store</code> (iOS Keychain, Android Keystore).
+      </p>
+      <p>
+        <strong>Processor:</strong> Supabase Inc., hosted in the EU
+        Frankfurt region (eu-central-1, AWS Frankfurt). A data
+        processing agreement under Art. 28 GDPR is in place; data
+        transfer takes place exclusively within the EU.
+      </p>
+      <p>
+        <strong>Legal basis:</strong> Art. 6 (1) (b) GDPR (performance
+        of contract — no Pro purchase without an account; in pure guest
+        mode this processing does not occur at all).
+      </p>
+      <p>
+        <strong>Deletion:</strong> You can delete your account at any
+        time in the app under <em>Settings → Delete Account</em>. All
+        account data at Supabase is then irrevocably deleted. Local
+        vocabulary data is removed from the device in the same step.
+      </p>
+
+      <h2>5. LLM backend for vocabulary extraction (anyvoc-backend.fly.dev)</h2>
+      <p>
+        When you submit content (text, image OCR, web link) to the app
+        for vocabulary extraction or translation, the app sends the
+        relevant text content to our backend proxy
+        <code>anyvoc-backend.fly.dev</code>. The proxy forwards the
+        request to an LLM provider.
+      </p>
+      <p>
+        <strong>What data:</strong> The text of the content to be
+        analysed (e.g. a Wikipedia excerpt, an OCR result, one of your
+        own notes). If this text contains personal data, that data is
+        transferred along with it — therefore, <strong>do not submit
+        sensitive or third-party personal data to the app that is not
+        intended for LLM analysis</strong>.
+      </p>
+      <p>
+        <strong>What we log:</strong> Per request, our backend writes a
+        structured log entry with the fields <code>at</code>,
+        <code>tier</code>, <code>model</code>, <code>provider</code>.
+        <strong>No</strong> content data, <strong>no</strong> IP
+        address, <strong>no</strong> user ID, <strong>no</strong>
+        headers. These logs serve solely error- and cost-analysis and
+        are not stored in a way that could be linked to your account
+        or device.
+      </p>
+      <p>
+        <strong>Backend hosting processor:</strong> Fly.io, Inc., USA.
+        The application server runs in the "cdg" region (Paris, France,
+        EU). At the host's infrastructure level, technical logs (IP
+        addresses, timestamps, HTTP statuses) are produced as is normal
+        for any web host. These are deleted automatically per the
+        host's retention policy and are not analysed by us. Fly.io is
+        bound to GDPR-conformant Standard Contractual Clauses.
+      </p>
+      <p><strong>LLM provider processors:</strong></p>
+      <ul>
+        <li>
+          <strong>Mistral AI</strong>, Paris, France (EU). Currently the
+          default provider (<code>mistral-small-latest</code>). Mistral
+          processes the submitted content to generate the AI response
+          and acknowledges retaining requests for a limited period for
+          abuse detection (see Mistral's privacy policy at mistral.ai).
+          Mistral, per its API terms, does <strong>not</strong> use the
+          data for model training.
+        </li>
+        <li>
+          <strong>Optionally Google Gemini</strong> (Google AI Studio
+          API). May be used as an alternative LLM provider; in that
+          case content is transferred to Google LLC, Mountain View, USA.
+          Cross-border transfer is based on Standard Contractual Clauses
+          and the EU-US Data Privacy Framework. Google does not use
+          AI-Studio-API content for model training per its terms.
+        </li>
+      </ul>
+      <p>
+        Which provider is concretely used depends on the server-side
+        configuration at the time of your request. This privacy policy
+        will be updated when the default routing configuration changes.
+      </p>
+      <p>
+        <strong>Legal basis:</strong> Art. 6 (1) (b) GDPR (performance
+        of contract — no LLM call, no vocabulary extraction). If you do
+        not want LLM processing, avoid the "Add content" function and
+        use only manual vocabulary entry.
+      </p>
+
+      <h2>6. On-device OCR</h2>
+      <p>
+        Images you hand to the app via the photo library or camera are
+        processed <strong>on-device</strong> with Google ML Kit Text
+        Recognition (<code>@infinitered/react-native-mlkit-text-recognition</code>).
+        Image content does <strong>not</strong> leave your device. Only
+        the extracted text is, if you choose vocabulary extraction,
+        forwarded to the LLM backend proxy (see section 5).
+      </p>
+
+      <h2>7. Permissions the app requests</h2>
+      <table>
+        <thead>
+          <tr><th>Permission</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Internet</td><td>Backend requests to anyvoc-backend.fly.dev and Supabase</td></tr>
+          <tr><td>Camera</td><td>Optional, to photograph vocabulary source texts (OCR)</td></tr>
+          <tr><td>Photo library (iOS)</td><td>Optional, to pick text-bearing images from the gallery</td></tr>
+          <tr><td>Audio recording</td><td>Reserved for future speech features — currently unused</td></tr>
+        </tbody>
+      </table>
+      <p>
+        You can revoke camera and photo-library permissions at any time
+        in your device's system settings. Internet access is required
+        for sign-in and LLM features; without internet, the app stays
+        usable in pure offline mode with locally-stored vocabulary.
+      </p>
+
+      <h2>8. Paid features (future)</h2>
+      <p>
+        Once the paid Pro features are activated, billing runs
+        exclusively through your store's payment system (Apple App
+        Store or Google Play). Anyvoc only receives confirmation from
+        the store of whether you have an active Pro entitlement — no
+        payment data, no credit-card details, no bank information.
+      </p>
+      <p>
+        We plan to use <strong>RevenueCat</strong> as the
+        receipt-validation layer. Once that service is live, this
+        privacy policy will be amended with the relevant section.
+      </p>
+
+      <h2>9. Crash reporting (future)</h2>
+      <p>
+        We plan to collect anonymous crash reports via Sentry to fix
+        app crashes. Such reports contain stack traces, device model,
+        and operating-system version, but <strong>no</strong> personal
+        data, <strong>no</strong> vocabulary content, <strong>no</strong>
+        email. Once crash reporting is active, this privacy policy will
+        be updated accordingly.
+      </p>
+
+      <h2>10. Cookies and tracking</h2>
+      <p>
+        The app itself uses <strong>no</strong> cookies and
+        <strong>no</strong> tracking, no ad networks, and no analytics
+        SDKs. The associated website anyvoc.eu may set strictly
+        necessary session cookies; no analytical or
+        marketing-related processing takes place there.
+      </p>
+
+      <h2>11. Your rights under GDPR</h2>
+      <p>You have the right at any time to:</p>
+      <ul>
+        <li>Information about the data stored about you (Art. 15)</li>
+        <li>Correction of inaccurate data (Art. 16)</li>
+        <li>Erasure of your data (Art. 17)</li>
+        <li>Restriction of processing (Art. 18)</li>
+        <li>Data portability (Art. 20)</li>
+        <li>Object to processing (Art. 21)</li>
+      </ul>
+      <p>
+        Where processing is based on consent, you can withdraw it at
+        any time.
+      </p>
+      <p>
+        Please direct such requests to
+        <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a>.
+        Since we hold very little personal data server-side (only the
+        sign-in account, if any), an information request can usually be
+        answered within a few days.
+      </p>
+      <p>
+        You also have the right to lodge a complaint with a data
+        protection supervisory authority. The competent authority for
+        us is:
+      </p>
+      <blockquote>
+        Der Landesbeauftragte für den Datenschutz und die
+        Informationsfreiheit Baden-Württemberg<br />
+        Postfach 10 29 32, 70025 Stuttgart, Germany<br />
+        <a href="https://www.baden-wuerttemberg.datenschutz.de/" rel="noopener">https://www.baden-wuerttemberg.datenschutz.de/</a>
+      </blockquote>
+
+      <h2>12. Changes to this privacy policy</h2>
+      <p>
+        We may amend this privacy policy when the app, the processing
+        purposes, or the legal framework changes. The current version
+        is available at
+        <a href="https://anyvoc.eu/en/legal/privacy.html" rel="noopener">https://anyvoc.eu/en/legal/privacy.html</a>.
+        For material changes we notify you in the app.
+      </p>
+      <p class="lead">
+        Note: this English version is provided for convenience. The
+        legally binding version is the
+        <a href="/legal/datenschutz.html">German privacy policy</a>.
+      </p>
+    </article>
+
+    <footer>
+      <div class="footer-inner">
+        <p>© 2026 Anyvoc. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="/en/legal/imprint.html">Imprint</a>
+          <a href="/en/legal/privacy.html">Privacy</a>
+          <a href="/en/legal/terms.html">Terms</a>
+          <a href="/en/legal/faq.html">FAQ</a>
+        </nav>
+        <div class="lang-picker" aria-label="Language">
+          <a href="/en/legal/privacy.html" class="active" aria-current="true">English</a>
+          <span class="sep" aria-hidden="true">|</span>
+          <a href="/legal/datenschutz.html">Deutsch</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

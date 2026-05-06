@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAQ — Anyvoc</title>
+    <meta name="description" content="Häufig gestellte Fragen zu Anyvoc — Inhalte, Trainer, CEFR, Pro, Konto, Datenschutz." />
+    <meta name="theme-color" content="#050D1A" />
+    <link rel="alternate" hreflang="de" href="/legal/faq.html" />
+    <link rel="alternate" hreflang="en" href="/en/legal/faq.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <a href="/" class="brand">
+        <img src="/logo.png" alt="" />
+        <span>Anyvoc</span>
+      </a>
+      <nav class="lang-toggle" aria-label="Sprache">
+        <a href="/legal/faq.html" class="active" aria-current="true">DE</a>
+        <span class="sep" aria-hidden="true">|</span>
+        <a href="/en/legal/faq.html">EN</a>
+      </nav>
+    </header>
+
+    <article class="legal">
+      <a href="/" class="back-link">← Startseite</a>
+      <h1>Anyvoc — FAQ</h1>
+      <p class="lead">Stand: 2026-05-05.</p>
+
+      <p>
+        Diese FAQ deckt die häufigsten Fragen zu Anyvoc ab. Findest du
+        deine Frage hier nicht beantwortet, schreib uns gern an
+        <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a>.
+      </p>
+
+      <hr />
+
+      <h2>Inhalte hinzufügen</h2>
+
+      <h3>Wie kommt neuer Vokabel-Stoff in Anyvoc rein?</h3>
+      <p>Es gibt vier Wege:</p>
+      <ol>
+        <li>
+          <strong>Aus einer anderen App teilen</strong> (Safari, Chrome,
+          Notes, …): Markier den Text oder den Link, tippe auf das
+          Teilen-Symbol deiner System-App, wähle Anyvoc aus der Liste.
+        </li>
+        <li>
+          <strong>Link einfügen</strong> im Tab <em>Content</em> →
+          "+" → "Add Link". Anyvoc liest die Webseite offline mit
+          Readability; nur wenn das nicht klappt, wird der Inhalt für
+          die Verarbeitung an unsere KI geschickt.
+        </li>
+        <li>
+          <strong>Text eingeben</strong> im Tab <em>Content</em> →
+          "+" → "Enter Text". Nutze das für eigene Notizen oder kurze
+          Passagen.
+        </li>
+        <li>
+          <strong>Foto auswählen</strong> im Tab <em>Content</em> →
+          "+" → "Choose Image". On-device-OCR (Google ML Kit,
+          vollständig offline) extrahiert den Text aus dem Bild — das
+          Bild selbst verlässt dein Gerät nicht.
+        </li>
+      </ol>
+
+      <h3>Warum dauert die Vokabel-Extraktion 10–30 Sekunden?</h3>
+      <p>
+        Die App schickt den Text an einen Sprach-Modell-Anbieter
+        (Mistral oder Google Gemini), der Vokabeln, Übersetzungen und
+        Beispielsätze generiert. Längere Texte werden in Blöcken
+        verarbeitet, dadurch braucht es bei einem ganzen Artikel auch
+        mal 30 Sekunden — die App zeigt dir dabei einen rotierenden
+        Status-Hint, was gerade passiert.
+      </p>
+
+      <h3>Welche Bilder funktionieren mit OCR?</h3>
+      <p>
+        Klare, gut belichtete Foto-Aufnahmen von gedrucktem Text
+        funktionieren sehr gut. Probleme gibt es bei: handgeschriebenem
+        Text, sehr kleinem Schriftbild, schräg fotografierten Seiten mit
+        starker Perspektive, oder wenn auf der Seite mehrere Spalten
+        ineinander verlaufen. Wenn die extrahierte Text-Vorschau falsch
+        aussieht, lieber abbrechen und ein schärferes Foto machen.
+      </p>
+
+      <h3>Werden meine Inhalte gespeichert oder zum KI-Training verwendet?</h3>
+      <p>
+        Nein. Wir speichern keine deiner Inhalte serverseitig — siehe
+        <a href="/legal/datenschutz.html">Datenschutzerklärung</a>.
+        Mistral und Google nutzen die Daten gemäß ihren
+        API-Nutzungsbedingungen <strong>nicht</strong> zum
+        Modell-Training.
+      </p>
+
+      <hr />
+
+      <h2>Trainer und Leitner-System</h2>
+
+      <h3>Was sind die fünf Boxen im Trainer?</h3>
+      <p>
+        Anyvoc benutzt das Leitner-System: jede Vokabel sitzt in einer
+        von fünf Boxen, je weiter, desto seltener wirst du zur
+        Wiederholung aufgefordert. Antwortest du richtig, rückt die
+        Vokabel eine Box weiter; antwortest du falsch, fällt sie zurück
+        in Box 1.
+      </p>
+      <p>Wiederholungs-Intervalle:</p>
+      <table>
+        <thead>
+          <tr><th>Box</th><th>Wiederholung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>täglich</td></tr>
+          <tr><td>2</td><td>alle 2 Tage</td></tr>
+          <tr><td>3</td><td>alle 4 Tage</td></tr>
+          <tr><td>4</td><td>alle 8 Tage</td></tr>
+          <tr><td>5</td><td>alle 16 Tage</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Was bedeutet "Missed" und "Got it" im Trainer?</h3>
+      <ul>
+        <li><strong>Got it</strong> — du wusstest die Antwort. Vokabel rückt eine Box weiter.</li>
+        <li><strong>Missed</strong> — du wusstest sie nicht oder warst unsicher. Vokabel fällt zurück in Box 1.</li>
+      </ul>
+      <p>
+        Es gibt nichts dazwischen — sei ehrlich, lieber zweimal "Missed"
+        tippen als eine zu schnelle Box-Promotion.
+      </p>
+
+      <h3>Warum bekomme ich am Ende einer Runde nochmal die "Missed"-Karten?</h3>
+      <p>
+        Karten, die du in einer Runde verfehlt hast, kommen am Ende der
+        Runde einmal zur Wiederholung dran. So gibst du dem Gehirn den
+        ersten Wiederholungs-Boost direkt.
+      </p>
+
+      <h3>Wie viele Karten kommen pro Runde dran?</h3>
+      <p>
+        Standardmäßig 20. Du kannst das in <em>Einstellungen → Cards per
+        round</em> zwischen 5 und 50 anpassen.
+      </p>
+
+      <h3>Was bringt der Streak unten in der Trainer-Statistik?</h3>
+      <p>
+        Eine Tageslaufzeit: jeder Tag, an dem du mindestens eine Vokabel
+        trainiert hast, zählt als Streak-Tag. Mehrere Lernsprachen
+        zählen auf <strong>denselben</strong> Streak ein — wer
+        Französisch und Italienisch parallel lernt, baut nicht zwei
+        separate Streaks auf.
+      </p>
+
+      <h3>Flashcard-Modus oder Typing-Modus — was ist besser?</h3>
+      <p>Beide haben ihren Nutzen:</p>
+      <ul>
+        <li>
+          <strong>Flashcard</strong> ist schneller, gut für tägliche
+          Wiederholungs-Routinen. Du tippst auf "Got it" oder "Missed".
+        </li>
+        <li>
+          <strong>Typing</strong> verlangt das aktive Niederschreiben —
+          sinnvoller für Vokabeln, die du auch selbst aktiv produzieren
+          willst (Schreiben, Sprechen). Schreibfehler-Toleranz ist
+          eingebaut.
+        </li>
+      </ul>
+      <p>Wechseln in <em>Einstellungen → Quiz mode</em>.</p>
+
+      <hr />
+
+      <h2>CEFR-Niveau und Filter</h2>
+
+      <h3>Warum sind manche Wörter, die ich gespeichert habe, im Trainer nicht da?</h3>
+      <p>
+        Die App filtert Vokabeln nach deinem eingestellten
+        CEFR-Mindest-Niveau (in <em>Einstellungen → CEFR level</em>).
+        Steht dein Niveau auf B1, werden A1- und A2-Vokabeln zwar in der
+        Datenbank gespeichert, aber im Trainer und in der Vokabel-Liste
+        ausgeblendet. Niveau senken → die Wörter erscheinen sofort
+        wieder.
+      </p>
+      <p>
+        <strong>Ausnahme:</strong> Vokabeln, die du selbst per
+        Long-Press im Original-Text hinzugefügt hast (Pro-Funktion),
+        werden <strong>immer</strong> angezeigt — egal welches Niveau
+        eingestellt ist. Dein expliziter Wille schlägt den Filter.
+      </p>
+
+      <h3>Wie verlässlich ist die CEFR-Einstufung?</h3>
+      <p>
+        Anyvoc berechnet das Niveau lokal und deterministisch aus der
+        Wort-Häufigkeit (Leipzig-Korpus) und dem Age-of-Acquisition. Die
+        Genauigkeit liegt bei rund 30 % exakt + 70 % im
+        ±1-Niveau-Bereich — vergleichbar mit dem, was dedizierte
+        KI-Modelle aus den selben Quelldaten erreichen. Der Lerneffekt
+        ist: B1-eingestufte Wörter sind für B1-Lerner sinnvoll, das
+        Modell liegt nur selten zwei Niveaus daneben.
+      </p>
+
+      <hr />
+
+      <h2>Sprachen und Pro-Modus</h2>
+
+      <h3>Kann ich mehrere Sprachen parallel lernen?</h3>
+      <p>
+        Ja — aber das ist eine Pro-Funktion. Im Free-Modus kannst du
+        jederzeit zwischen Lernsprachen wechseln, behältst aber nur die
+        Vokabeln der zuletzt aktiven Sprache. Wer Pro abonniert, hält
+        Vokabeln und Lerngeschichte in beliebig vielen Sprachen
+        gleichzeitig.
+      </p>
+
+      <h3>Was passiert, wenn ich Pro kündige und Vokabeln in mehreren Sprachen habe?</h3>
+      <p>
+        Beim Kündigen erscheint ein Dialog, in dem du <strong>eine</strong>
+        Sprache auswählst, die behalten werden soll. Vokabeln und Inhalte
+        aller anderen Sprachen werden gelöscht. Das ist nicht reversibel
+        — exportiere vorher dein Vokabular über
+        <em>Einstellungen → Export</em>, falls du es behalten willst.
+      </p>
+
+      <h3>Ich lerne nur eine Sprache — bringt mir Pro etwas?</h3>
+      <p>Drei sichtbare Vorteile auch im Single-Language-Setup:</p>
+      <ul>
+        <li>
+          <strong>Tap-to-save</strong>: lange auf ein Wort im
+          Original-Text tippen, um es als Einzel-Vokabel hinzuzufügen —
+          auch Mehrwort-Phrasen wie <em>"prateleira de bagagem"</em>
+          oder <em>"kein Bock haben"</em>.
+        </li>
+        <li>
+          <strong>Volltext-Übersetzung</strong> des Original-Texts neben
+          dem Original.
+        </li>
+        <li>
+          <strong>Höhere Limits</strong>: längere Texte und kein
+          tägliches Content-Add-Limit.
+        </li>
+      </ul>
+
+      <h3>Welche Sprachen unterstützt Anyvoc?</h3>
+      <p>
+        Anyvoc unterstützt 12 Lernsprachen: Englisch, Deutsch,
+        Französisch, Spanisch, Italienisch, Portugiesisch,
+        Niederländisch, Schwedisch, Norwegisch, Dänisch, Polnisch,
+        Tschechisch.
+      </p>
+
+      <hr />
+
+      <h2>Anmeldung und Konto</h2>
+
+      <h3>Brauche ich ein Konto?</h3>
+      <p>
+        Nein. Anyvoc funktioniert vollständig ohne Anmeldung im
+        Gast-Modus. Ein Konto brauchst du nur für Pro
+        (Bezahl-Validierung über deinen Store) oder wenn dein
+        Gast-Login-Budget aufgebraucht ist.
+      </p>
+
+      <h3>Was ist das Gast-Login-Budget?</h3>
+      <p>
+        Beim ersten Start hast du drei "Gast-Sessions". Jede Sitzung als
+        Gast verbraucht eine. Sind die alle aufgebraucht, musst du dich
+        anmelden, um die App weiter zu benutzen. Das Limit verhindert,
+        dass jemand die App ohne jede Identifikation unbegrenzt benutzt.
+      </p>
+
+      <h3>Kann ich mein Konto löschen?</h3>
+      <p>Ja — <em>Einstellungen → Delete Account</em>. Das löscht:</p>
+      <ul>
+        <li>die serverseitigen Anmelde-Daten bei Supabase (E-Mail-Adresse, Tokens, Konto-Metadaten)</li>
+        <li>alle lokalen Vokabeln, Inhalte, Lernfortschritte auf diesem Gerät</li>
+      </ul>
+      <p>
+        Die Aktion ist unwiderruflich. Ein "Reset App"-Button gibt es
+        absichtlich nicht mehr — der ließe das Gast-Login-Budget
+        umgehen.
+      </p>
+
+      <h3>Welche Anmelde-Methoden gibt es?</h3>
+      <ul>
+        <li>
+          <strong>E-Mail mit OTP-Code</strong> — du gibst deine E-Mail
+          ein, kriegst einen 6-stelligen Code zugeschickt, gibst ihn
+          ein. Kein Passwort.
+        </li>
+        <li><strong>Sign in with Apple</strong> — nur auf iOS.</li>
+        <li>
+          <strong>Sign in with Google</strong> — nur auf Android. Aus
+          technischen Gründen nicht auf iOS verfügbar; iOS-Nutzer haben
+          Apple und E-Mail.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Daten und Privatsphäre</h2>
+
+      <h3>Wo werden meine Vokabeln gespeichert?</h3>
+      <p>
+        Lokal auf deinem Gerät, in einer SQLite-Datenbank. Es gibt keine
+        Cloud-Synchronisation. Beim App-Wechsel auf ein neues Gerät
+        verlierst du deine Vokabel-Sammlung — exportiere sie vorher per
+        <em>Einstellungen → Export</em>.
+      </p>
+
+      <h3>Wie exportiere ich meine Vokabeln?</h3>
+      <p>
+        <em>Einstellungen → Data Handling → Export</em>. Du erhältst
+        eine JSON-Datei mit allen Vokabeln, Inhalten und Leitner-Status.
+        Die kannst du auf einem anderen Gerät über
+        <em>Einstellungen → Data Handling → Import</em> einspielen.
+      </p>
+
+      <h3>Was passiert, wenn ich offline bin?</h3>
+      <p>
+        Trainer, Vokabel-Liste, Streak und Leitner-Wiederholungen
+        funktionieren vollständig offline. Was offline <strong>nicht</strong>
+        geht: neue Inhalte über LLM-Extraktion hinzufügen (das braucht
+        Internet) und Anmeldung.
+      </p>
+
+      <h3>Schickt Anyvoc Werbung-Tracking oder Analytics?</h3>
+      <p>
+        Nein. Anyvoc nutzt keine Werbung, keine Tracker, keine
+        Analytics-SDKs. Die einzigen externen Verbindungen sind
+        Anmeldung (Supabase) und KI-Verarbeitung (LLM-Backend) — beide
+        rein funktional und in der
+        <a href="/legal/datenschutz.html">Datenschutzerklärung</a>
+        beschrieben.
+      </p>
+
+      <hr />
+
+      <h2>Bezahlung und Pro</h2>
+
+      <h3>Was kostet Pro?</h3>
+      <p>Aktuell:</p>
+      <ul>
+        <li><strong>Monatlich:</strong> 3,99 €</li>
+        <li><strong>Jährlich:</strong> 29,99 € (rund 37 % günstiger als das Monatsabo)</li>
+      </ul>
+      <p>
+        Die Preise erscheinen vor dem Kauf nochmal im Bezahl-Dialog
+        deines Stores — das ist die verbindliche Anzeige.
+      </p>
+
+      <h3>Wie kündige ich Pro?</h3>
+      <ul>
+        <li><strong>iOS:</strong> Einstellungen → Apple-ID → Abonnements → Anyvoc → Abonnement kündigen</li>
+        <li><strong>Android:</strong> Play Store → Profil → Zahlungen und Abos → Abos → Anyvoc → Abo kündigen</li>
+      </ul>
+      <p>Bis Ende der laufenden Periode behältst du Pro-Funktionen.</p>
+
+      <h3>Erstattung möglich?</h3>
+      <p>
+        Erstattungen laufen über deinen Store (Apple oder Google), nicht
+        über uns. Wir haben keinen direkten Zugriff auf die
+        Bezahl-Daten:
+      </p>
+      <ul>
+        <li>Apple: <a href="https://reportaproblem.apple.com/" rel="noopener">https://reportaproblem.apple.com/</a></li>
+        <li>Google: <a href="https://support.google.com/googleplay/answer/2479637" rel="noopener">https://support.google.com/googleplay/answer/2479637</a></li>
+      </ul>
+      <p>
+        Bei Anliegen außerhalb der Standard-Erstattungs-Pfade schreib
+        uns an <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a>
+        — wir helfen, soweit es unsere Möglichkeiten zulassen.
+      </p>
+
+      <hr />
+
+      <h2>Technische Probleme</h2>
+
+      <h3>Die App stürzt ab oder hängt — was tun?</h3>
+      <ol>
+        <li>App komplett schließen (vom Multitasking aus wegwischen) und neu öffnen.</li>
+        <li>Wenn das nicht hilft: Gerät neu starten.</li>
+        <li>
+          Wenn auch das nicht hilft: schreib uns über <em>Einstellungen
+          → Feedback</em> — die Mail enthält automatisch deine
+          App-Version und Plattform, damit wir das Problem
+          nachvollziehen können.
+        </li>
+      </ol>
+
+      <h3>Beim Hinzufügen eines Links steht "could not extract content".</h3>
+      <p>
+        Ein paar Webseiten sind so JavaScript-lastig, dass die
+        offline-Extraktion (Readability) keinen lesbaren Text findet.
+        Probier:
+      </p>
+      <ul>
+        <li>den Text aus der Webseite in der Original-App markieren und über das Teilen-Menü als Text statt Link zu Anyvoc schicken</li>
+        <li>oder den Inhalt über <em>Content → "+" → Enter Text</em> einfügen</li>
+      </ul>
+
+      <h3>Ich habe ein zwei-, drei-, vierfaches Wort doppelt in der Liste.</h3>
+      <p>
+        Im seltenen Fall, dass dieselbe Schreibweise in zwei
+        Lernsprachen existiert (z. B. <em>casa</em> in Italienisch UND
+        Spanisch), sind das <strong>zwei unterschiedliche Vokabeln</strong>
+        — Anyvoc speichert das absichtlich getrennt pro Sprache. Wenn
+        beide in derselben Sprache stehen, melde es uns
+        <a href="mailto:feedback@anyvoc.eu">per Feedback</a>.
+      </p>
+
+      <hr />
+
+      <h2>Etwas anderes?</h2>
+      <p>
+        Wenn deine Frage hier nicht steht: schreib uns über
+        <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a> —
+        die Mail enthält automatisch deine App-Version + Plattform,
+        damit wir gezielt antworten können.
+      </p>
+    </article>
+
+    <footer>
+      <div class="footer-inner">
+        <p>© 2026 Anyvoc. Alle Rechte vorbehalten.</p>
+        <nav class="footer-links" aria-label="Rechtliches">
+          <a href="/legal/impressum.html">Impressum</a>
+          <a href="/legal/datenschutz.html">Datenschutz</a>
+          <a href="/legal/agb.html">AGB</a>
+          <a href="/legal/faq.html">FAQ</a>
+        </nav>
+        <div class="lang-picker" aria-label="Sprache">
+          <a href="/en/legal/faq.html">English</a>
+          <span class="sep" aria-hidden="true">|</span>
+          <a href="/legal/faq.html" class="active" aria-current="true">Deutsch</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

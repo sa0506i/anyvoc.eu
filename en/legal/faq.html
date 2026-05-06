@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAQ — Anyvoc</title>
+    <meta name="description" content="Frequently asked questions about Anyvoc — content, trainer, CEFR, Pro, account, privacy." />
+    <meta name="theme-color" content="#050D1A" />
+    <link rel="alternate" hreflang="de" href="/legal/faq.html" />
+    <link rel="alternate" hreflang="en" href="/en/legal/faq.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <a href="/en/" class="brand">
+        <img src="/logo.png" alt="" />
+        <span>Anyvoc</span>
+      </a>
+      <nav class="lang-toggle" aria-label="Language">
+        <a href="/legal/faq.html">DE</a>
+        <span class="sep" aria-hidden="true">|</span>
+        <a href="/en/legal/faq.html" class="active" aria-current="true">EN</a>
+      </nav>
+    </header>
+
+    <article class="legal">
+      <a href="/en/" class="back-link">← Home</a>
+      <h1>Anyvoc — FAQ</h1>
+      <p class="lead">Last updated: 2026-05-05.</p>
+
+      <p>
+        This FAQ covers the most common questions about Anyvoc. If you
+        don't find your question answered here, write to us at
+        <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a>.
+      </p>
+
+      <hr />
+
+      <h2>Adding content</h2>
+
+      <h3>How does new vocabulary material get into Anyvoc?</h3>
+      <p>There are four ways:</p>
+      <ol>
+        <li>
+          <strong>Share from another app</strong> (Safari, Chrome,
+          Notes, …): select the text or link, tap the share icon in
+          your system app, choose Anyvoc from the list.
+        </li>
+        <li>
+          <strong>Paste a link</strong> on the <em>Content</em> tab →
+          "+" → "Add Link". Anyvoc reads the page offline with
+          Readability; only when that fails does the content go to our
+          AI for processing.
+        </li>
+        <li>
+          <strong>Enter text</strong> on the <em>Content</em> tab →
+          "+" → "Enter Text". Use this for your own notes or short
+          passages.
+        </li>
+        <li>
+          <strong>Pick a photo</strong> on the <em>Content</em> tab →
+          "+" → "Choose Image". On-device OCR (Google ML Kit, fully
+          offline) extracts the text from the image — the image itself
+          does not leave your device.
+        </li>
+      </ol>
+
+      <h3>Why does vocabulary extraction take 10–30 seconds?</h3>
+      <p>
+        The app sends the text to a language-model provider (Mistral or
+        Google Gemini), which generates vocabulary, translations, and
+        example sentences. Longer texts are processed in chunks, so a
+        whole article can take 30 seconds — the app shows a rotating
+        status hint of what's happening.
+      </p>
+
+      <h3>Which images work with OCR?</h3>
+      <p>
+        Clear, well-lit photos of printed text work very well. Trouble
+        cases: handwritten text, very small print, photos at a steep
+        angle with strong perspective, or pages where multiple columns
+        run into each other. If the extracted text preview looks wrong,
+        better to cancel and take a sharper photo.
+      </p>
+
+      <h3>Is my content stored or used for AI training?</h3>
+      <p>
+        No. We don't store any of your content server-side — see the
+        <a href="/en/legal/privacy.html">privacy policy</a>. Mistral and
+        Google, per their API terms of use, do <strong>not</strong> use
+        the data for model training.
+      </p>
+
+      <hr />
+
+      <h2>Trainer and Leitner system</h2>
+
+      <h3>What are the five boxes in the trainer?</h3>
+      <p>
+        Anyvoc uses the Leitner system: each vocabulary item sits in
+        one of five boxes; the further along, the less often you'll be
+        prompted to review it. Answer correctly and the item moves up
+        a box; answer incorrectly and it falls back to box 1.
+      </p>
+      <p>Review intervals:</p>
+      <table>
+        <thead>
+          <tr><th>Box</th><th>Review</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>daily</td></tr>
+          <tr><td>2</td><td>every 2 days</td></tr>
+          <tr><td>3</td><td>every 4 days</td></tr>
+          <tr><td>4</td><td>every 8 days</td></tr>
+          <tr><td>5</td><td>every 16 days</td></tr>
+        </tbody>
+      </table>
+
+      <h3>What do "Missed" and "Got it" mean in the trainer?</h3>
+      <ul>
+        <li><strong>Got it</strong> — you knew the answer. The item moves up a box.</li>
+        <li><strong>Missed</strong> — you didn't know it or weren't sure. The item falls back to box 1.</li>
+      </ul>
+      <p>
+        There's nothing in between — be honest, better to tap "Missed"
+        twice than promote a box too quickly.
+      </p>
+
+      <h3>Why do I get the "Missed" cards again at the end of a round?</h3>
+      <p>
+        Cards you missed during a round come up once more for review at
+        the end. That gives your brain the first repetition boost
+        immediately.
+      </p>
+
+      <h3>How many cards per round?</h3>
+      <p>
+        Twenty by default. You can adjust this in
+        <em>Settings → Cards per round</em> between 5 and 50.
+      </p>
+
+      <h3>What's the streak in the trainer stats?</h3>
+      <p>
+        A daily run-time: every day you've trained at least one
+        vocabulary item counts as a streak day. Multiple learning
+        languages contribute to the <strong>same</strong> streak —
+        someone learning French and Italian in parallel doesn't build
+        two separate streaks.
+      </p>
+
+      <h3>Flashcard mode or typing mode — which is better?</h3>
+      <p>Both have their use:</p>
+      <ul>
+        <li>
+          <strong>Flashcard</strong> is faster, good for daily review
+          routines. You tap "Got it" or "Missed".
+        </li>
+        <li>
+          <strong>Typing</strong> requires you to write the answer —
+          better for vocabulary you also want to actively produce
+          (writing, speaking). Typo tolerance is built in.
+        </li>
+      </ul>
+      <p>Switch in <em>Settings → Quiz mode</em>.</p>
+
+      <hr />
+
+      <h2>CEFR level and filtering</h2>
+
+      <h3>Why are some words I saved missing in the trainer?</h3>
+      <p>
+        The app filters vocabulary by your configured CEFR minimum
+        (in <em>Settings → CEFR level</em>). If your level is set to
+        B1, A1 and A2 vocabulary is still stored in the database but
+        hidden in the trainer and the vocabulary list. Lower the
+        level and the words reappear immediately.
+      </p>
+      <p>
+        <strong>Exception:</strong> vocabulary you've added yourself
+        via long-press in the original text (Pro feature) is
+        <strong>always</strong> shown — regardless of the configured
+        level. Your explicit intent beats the filter.
+      </p>
+
+      <h3>How reliable is the CEFR classification?</h3>
+      <p>
+        Anyvoc computes the level locally and deterministically from
+        word frequency (Leipzig corpus) and age-of-acquisition.
+        Accuracy is around 30 % exact + 70 % within ±1 level —
+        comparable to dedicated AI models on the same source data. The
+        learning takeaway: B1-classified words are reasonable for B1
+        learners; the model rarely lands two levels off.
+      </p>
+
+      <hr />
+
+      <h2>Languages and Pro</h2>
+
+      <h3>Can I learn multiple languages in parallel?</h3>
+      <p>
+        Yes — but it's a Pro feature. In Free mode you can switch
+        learning languages at any time, but you only keep the
+        vocabulary of the most recently active language. Pro
+        subscribers hold vocabulary and learning history in any number
+        of languages simultaneously.
+      </p>
+
+      <h3>What happens if I cancel Pro and have vocabulary in multiple languages?</h3>
+      <p>
+        On cancellation a dialog appears in which you pick
+        <strong>one</strong> language to keep. Vocabulary and content
+        of all other languages are deleted. This is not reversible —
+        export your vocabulary first via <em>Settings → Export</em> if
+        you want to keep it.
+      </p>
+
+      <h3>I'm only learning one language — does Pro give me anything?</h3>
+      <p>Three visible benefits even in a single-language setup:</p>
+      <ul>
+        <li>
+          <strong>Tap-to-save</strong>: long-press a word in the
+          original text to add it as a single vocab — including
+          multi-word phrases like <em>"prateleira de bagagem"</em> or
+          <em>"kein Bock haben"</em>.
+        </li>
+        <li>
+          <strong>Full-text translation</strong> of the original next to
+          the original.
+        </li>
+        <li>
+          <strong>Higher limits</strong>: longer texts and no daily
+          content-add limit.
+        </li>
+      </ul>
+
+      <h3>Which languages does Anyvoc support?</h3>
+      <p>
+        Anyvoc supports 12 learning languages: English, German, French,
+        Spanish, Italian, Portuguese, Dutch, Swedish, Norwegian, Danish,
+        Polish, Czech.
+      </p>
+
+      <hr />
+
+      <h2>Sign-in and account</h2>
+
+      <h3>Do I need an account?</h3>
+      <p>
+        No. Anyvoc works fully without sign-in, in guest mode. You only
+        need an account for Pro (purchase validation through your
+        store) or once your guest-login budget is exhausted.
+      </p>
+
+      <h3>What is the guest-login budget?</h3>
+      <p>
+        At first launch you have three "guest sessions". Each guest
+        session uses one. Once they're all used, you have to sign in to
+        keep using the app. The limit prevents anyone from using the
+        app indefinitely without any identification.
+      </p>
+
+      <h3>Can I delete my account?</h3>
+      <p>Yes — <em>Settings → Delete Account</em>. This deletes:</p>
+      <ul>
+        <li>the server-side sign-in data at Supabase (email address, tokens, account metadata)</li>
+        <li>all local vocabulary, content, and learning progress on this device</li>
+      </ul>
+      <p>
+        The action is irreversible. There is intentionally no longer a
+        "Reset App" button — it would let users bypass the guest-login
+        budget.
+      </p>
+
+      <h3>Which sign-in methods are there?</h3>
+      <ul>
+        <li>
+          <strong>Email with OTP code</strong> — you enter your email,
+          receive a 6-digit code, enter it. No password.
+        </li>
+        <li><strong>Sign in with Apple</strong> — iOS only.</li>
+        <li>
+          <strong>Sign in with Google</strong> — Android only. Not
+          available on iOS for technical reasons; iOS users have Apple
+          and email.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Data and privacy</h2>
+
+      <h3>Where is my vocabulary stored?</h3>
+      <p>
+        Locally on your device, in a SQLite database. There is no
+        cloud sync. When you switch to a new device you lose your
+        vocabulary collection — export it first via
+        <em>Settings → Export</em>.
+      </p>
+
+      <h3>How do I export my vocabulary?</h3>
+      <p>
+        <em>Settings → Data Handling → Export</em>. You receive a JSON
+        file with all vocabulary, content, and Leitner state. You can
+        import it on another device via
+        <em>Settings → Data Handling → Import</em>.
+      </p>
+
+      <h3>What happens when I'm offline?</h3>
+      <p>
+        Trainer, vocabulary list, streak, and Leitner reviews work
+        fully offline. What does <strong>not</strong> work offline:
+        adding new content via LLM extraction (needs internet) and
+        sign-in.
+      </p>
+
+      <h3>Does Anyvoc send ad-tracking or analytics?</h3>
+      <p>
+        No. Anyvoc uses no ads, no trackers, no analytics SDKs. The
+        only external connections are sign-in (Supabase) and AI
+        processing (LLM backend) — both purely functional and described
+        in the <a href="/en/legal/privacy.html">privacy policy</a>.
+      </p>
+
+      <hr />
+
+      <h2>Payment and Pro</h2>
+
+      <h3>What does Pro cost?</h3>
+      <p>Currently:</p>
+      <ul>
+        <li><strong>Monthly:</strong> €3.99</li>
+        <li><strong>Yearly:</strong> €29.99 (about 37 % cheaper than monthly)</li>
+      </ul>
+      <p>
+        Prices are shown again before purchase in your store's payment
+        dialog — that's the binding display.
+      </p>
+
+      <h3>How do I cancel Pro?</h3>
+      <ul>
+        <li><strong>iOS:</strong> Settings → Apple ID → Subscriptions → Anyvoc → Cancel subscription</li>
+        <li><strong>Android:</strong> Play Store → Profile → Payments &amp; subscriptions → Subscriptions → Anyvoc → Cancel subscription</li>
+      </ul>
+      <p>You keep Pro features until the end of the current period.</p>
+
+      <h3>Can I get a refund?</h3>
+      <p>
+        Refunds run through your store (Apple or Google), not us. We
+        have no direct access to payment data:
+      </p>
+      <ul>
+        <li>Apple: <a href="https://reportaproblem.apple.com/" rel="noopener">https://reportaproblem.apple.com/</a></li>
+        <li>Google: <a href="https://support.google.com/googleplay/answer/2479637" rel="noopener">https://support.google.com/googleplay/answer/2479637</a></li>
+      </ul>
+      <p>
+        For matters outside the standard refund paths, write to us at
+        <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a> —
+        we'll help where we can.
+      </p>
+
+      <hr />
+
+      <h2>Technical issues</h2>
+
+      <h3>The app crashes or hangs — what now?</h3>
+      <ol>
+        <li>Close the app completely (swipe it away from multitasking) and reopen.</li>
+        <li>If that doesn't help: restart the device.</li>
+        <li>
+          If even that doesn't help: write to us via <em>Settings →
+          Feedback</em> — the email automatically includes your app
+          version and platform so we can reproduce the issue.
+        </li>
+      </ol>
+
+      <h3>Adding a link says "could not extract content".</h3>
+      <p>
+        Some sites are so JavaScript-heavy that the offline extractor
+        (Readability) finds no readable text. Try:
+      </p>
+      <ul>
+        <li>select the text from the page in the original app and share it as text instead of as a link to Anyvoc</li>
+        <li>or paste the content via <em>Content → "+" → Enter Text</em></li>
+      </ul>
+
+      <h3>I have the same word listed twice.</h3>
+      <p>
+        In the rare case that the same spelling exists in two learning
+        languages (e.g. <em>casa</em> in Italian AND Spanish), those are
+        <strong>two distinct vocabulary items</strong> — Anyvoc stores
+        them deliberately separately per language. If both are in the
+        same language, please report it
+        <a href="mailto:feedback@anyvoc.eu">via feedback</a>.
+      </p>
+
+      <hr />
+
+      <h2>Something else?</h2>
+      <p>
+        If your question isn't here: write to us at
+        <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a> —
+        the email automatically includes your app version + platform so
+        we can answer specifically.
+      </p>
+    </article>
+
+    <footer>
+      <div class="footer-inner">
+        <p>© 2026 Anyvoc. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="/en/legal/imprint.html">Imprint</a>
+          <a href="/en/legal/privacy.html">Privacy</a>
+          <a href="/en/legal/terms.html">Terms</a>
+          <a href="/en/legal/faq.html">FAQ</a>
+        </nav>
+        <div class="lang-picker" aria-label="Language">
+          <a href="/en/legal/faq.html" class="active" aria-current="true">English</a>
+          <span class="sep" aria-hidden="true">|</span>
+          <a href="/legal/faq.html">Deutsch</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

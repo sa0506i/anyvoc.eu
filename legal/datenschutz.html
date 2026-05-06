@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Datenschutz — Anyvoc</title>
+    <meta
+      name="description"
+      content="Datenschutzerklärung der mobilen App Anyvoc und der Webseiten unter anyvoc.eu."
+    />
+    <meta name="theme-color" content="#050D1A" />
+    <link rel="alternate" hreflang="de" href="/legal/datenschutz.html" />
+    <link rel="alternate" hreflang="en" href="/en/legal/privacy.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <a href="/" class="brand">
+        <img src="/logo.png" alt="" />
+        <span>Anyvoc</span>
+      </a>
+      <nav class="lang-toggle" aria-label="Sprache">
+        <a href="/legal/datenschutz.html" class="active" aria-current="true">DE</a>
+        <span class="sep" aria-hidden="true">|</span>
+        <a href="/en/legal/privacy.html">EN</a>
+      </nav>
+    </header>
+
+    <article class="legal">
+      <a href="/" class="back-link">← Startseite</a>
+      <h1>Datenschutzerklärung</h1>
+      <p class="lead">Stand: 2026-05-05.</p>
+
+      <p>
+        Diese Datenschutzerklärung erklärt, welche personenbezogenen
+        Daten die mobile App <strong>Anyvoc</strong> und die zugehörigen
+        Webseiten unter anyvoc.eu verarbeiten, zu welchem Zweck und auf
+        welcher Rechtsgrundlage.
+      </p>
+
+      <h2>1. Verantwortlicher</h2>
+      <p>Verantwortlicher im Sinne der DSGVO ist:</p>
+      <address>
+        Sebastian Schulte am Hülse<br />
+        Hildebrandstr. 43<br />
+        70191 Stuttgart<br />
+        Deutschland<br />
+        E-Mail: <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a>
+      </address>
+
+      <h2>2. Grundsatz: Daten bleiben auf deinem Gerät</h2>
+      <p>
+        Anyvoc speichert sämtliche Vokabeldaten, Inhalte, Lernfortschritte
+        und Einstellungen <strong>lokal auf deinem Endgerät</strong> in
+        einer SQLite-Datenbank. Es gibt keine Cloud-Synchronisation, kein
+        Server-seitiges Konto für deine Vokabel-Daten und keine
+        Auswertung deiner Lerninhalte durch uns.
+      </p>
+      <p>Die einzigen externen Verbindungen, die die App aufbaut, sind:</p>
+      <ul>
+        <li>Optionales Anmelde-Backend (Supabase) bei Sign-In, siehe Abschnitt 4.</li>
+        <li>LLM-Backend für Vokabel-Extraktion und Übersetzung, siehe Abschnitt 5.</li>
+      </ul>
+      <p>
+        Wenn du die App im Gast-Modus benutzt und keine Inhalte zur
+        Vokabel-Extraktion einreichst, werden <strong>keine</strong>
+        personenbezogenen Daten an externe Dienste übertragen.
+      </p>
+
+      <h2>3. Lokale Speicherung auf dem Endgerät</h2>
+      <p>
+        Folgende Kategorien werden ausschließlich lokal in der
+        SQLite-Datenbank der App gespeichert:
+      </p>
+      <ul>
+        <li>Vokabeln, Übersetzungen, CEFR-Niveaus, Beispielkontexte</li>
+        <li>Inhalte (Texte, Links, OCR-Resultate aus Bildern)</li>
+        <li>Leitner-Fortschritt, Wiederholungstage, Quiz-Ergebnisse</li>
+        <li>Einstellungen (Mutter-/Lernsprache, CEFR-Minimum, Quiz-Modus)</li>
+        <li>Pro-Status-Flag (lokal, vor Aktivierung von In-App-Käufen)</li>
+        <li>Anonymes Counter für Gast-Login-Verbleibsbudget (<code>guest_login_remaining</code>)</li>
+      </ul>
+      <p>Diese Daten verlassen dein Gerät nicht. Sie werden gelöscht, wenn du:</p>
+      <ul>
+        <li>die App deinstallierst, oder</li>
+        <li>
+          (sofern angemeldet) in den App-Einstellungen "Delete Account"
+          auswählst — dabei werden die lokalen Daten auf deinem Gerät und
+          zusätzlich die serverseitigen Authentifizierungsdaten bei
+          Supabase unwiderruflich gelöscht.
+        </li>
+      </ul>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO
+        (Vertragserfüllung — ohne lokale Speicherung kann die App ihre
+        Funktion nicht erfüllen).
+      </p>
+
+      <h2>4. Authentifizierung über Supabase (optional)</h2>
+      <p>
+        Anyvoc lässt sich ohne Anmeldung im Gast-Modus benutzen. Wer sich
+        anmeldet, tut dies aus einem dieser Gründe:
+      </p>
+      <ul>
+        <li>Pro-Funktionen freischalten (zukünftig, sobald In-App-Kauf aktiv).</li>
+        <li>Gast-Limit ist aufgebraucht (3 Gast-Sessions pro Gerät).</li>
+      </ul>
+      <p>Bei der Anmeldung werden folgende Daten an Supabase übertragen:</p>
+      <ul>
+        <li>Bei E-Mail-OTP: deine E-Mail-Adresse + 6-stelliger Verifizierungscode.</li>
+        <li>
+          Bei "Sign in with Apple" (iOS): das von Apple ausgestellte
+          Identity-Token. Apple kann dabei eine pseudonyme E-Mail
+          (<code>@privaterelay.appleid.com</code>) generieren — wir sehen
+          nur diese.
+        </li>
+        <li>
+          Bei "Sign in with Google" (Android): das Google-Identity-Token
+          mit E-Mail-Adresse und Google-User-ID.
+        </li>
+      </ul>
+      <p>Supabase speichert für dein Konto:</p>
+      <ul>
+        <li>Eine eindeutige User-ID (UUID)</li>
+        <li>Deine E-Mail-Adresse (oder Apple-Pseudonym-Mail)</li>
+        <li>Erstellungs- und letztes Anmelde-Datum</li>
+        <li>Refresh-/Access-Tokens für Session-Management</li>
+      </ul>
+      <p>
+        Die Tokens werden auf deinem Gerät verschlüsselt mit
+        <code>expo-secure-store</code> abgelegt (iOS Keychain, Android
+        Keystore).
+      </p>
+      <p>
+        <strong>Auftragsverarbeiter:</strong> Supabase Inc., gehostet in
+        der EU-Region Frankfurt am Main (eu-central-1, AWS Frankfurt). Es
+        liegt ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO vor;
+        die Datenübermittlung findet ausschließlich innerhalb der EU
+        statt.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO
+        (Vertragserfüllung — ohne Konto kein Pro-Bezug; bei reinem
+        Gast-Modus entfällt diese Verarbeitung vollständig).
+      </p>
+      <p>
+        <strong>Löschung:</strong> Du kannst dein Konto jederzeit in der
+        App unter <em>Einstellungen → Delete Account</em> löschen. Damit
+        werden bei Supabase alle Konto-Daten unwiderruflich gelöscht.
+        Lokale Vokabeldaten werden in diesem Schritt ebenfalls vom Gerät
+        entfernt.
+      </p>
+
+      <h2>5. LLM-Backend für Vokabel-Extraktion (anyvoc-backend.fly.dev)</h2>
+      <p>
+        Wenn du Inhalte (Text, Bild-OCR, Web-Link) zur Vokabel-Extraktion
+        oder Übersetzung in die App einbringst, sendet die App den
+        entsprechenden Text-Inhalt an unseren Backend-Proxy
+        <code>anyvoc-backend.fly.dev</code>. Der Proxy reicht die Anfrage
+        an einen LLM-Anbieter weiter.
+      </p>
+      <p>
+        <strong>Welche Daten:</strong> Der Text der zu analysierenden
+        Inhalte (zum Beispiel ein Wikipedia-Artikel-Auszug, ein
+        OCR-Ergebnis, eine deiner Notizen). Wenn dieser Text
+        personenbezogene Daten enthält, werden auch diese übertragen —
+        daher: <strong>bring keine sensiblen oder fremden
+        personenbezogenen Daten in die App ein, die nicht für eine
+        LLM-Analyse bestimmt sind</strong>.
+      </p>
+      <p>
+        <strong>Was wir loggen:</strong> Pro Anfrage wird auf unserem
+        Backend ein strukturierter Log-Eintrag mit den Feldern
+        <code>at</code>, <code>tier</code>, <code>model</code>,
+        <code>provider</code> geschrieben. <strong>Keine</strong>
+        Inhalts-Daten, <strong>keine</strong> IP-Adresse,
+        <strong>keine</strong> User-ID, <strong>keine</strong> Header.
+        Diese Logs dienen ausschließlich der Fehler- und Kosten-Analyse
+        und werden nicht mit deinem Konto oder Gerät verknüpfbar
+        gespeichert.
+      </p>
+      <p>
+        <strong>Auftragsverarbeiter Backend-Hosting:</strong> Fly.io,
+        Inc., USA. Der Anwendungs-Server läuft in der Region "cdg"
+        (Paris, Frankreich, EU). Auf der Infrastruktur-Ebene des Hosters
+        fallen technische Logs an (unter anderem IP-Adressen,
+        Zeitstempel, HTTP-Status), wie bei jedem Web-Host üblich. Diese
+        werden vom Hoster nach dessen Aufbewahrungsrichtlinien
+        automatisch gelöscht und nicht von uns ausgewertet. Fly.io ist
+        nach Standard-Vertragsklauseln zur DSGVO-Konformität
+        verpflichtet.
+      </p>
+      <p><strong>Auftragsverarbeiter LLM-Anbieter:</strong></p>
+      <ul>
+        <li>
+          <strong>Mistral AI</strong>, Paris, Frankreich (EU). Aktuell
+          der Standard-Anbieter (<code>mistral-small-latest</code>).
+          Mistral verarbeitet die übermittelten Inhalte zur Generierung
+          der KI-Antwort und gibt zu, Anfragen für ein begrenztes
+          Zeitfenster zur Missbrauchs-Erkennung zu speichern (siehe
+          Mistral Privacy Policy unter mistral.ai). Mistral verwendet die
+          Daten gemäß seinen API-Bedingungen <strong>nicht</strong> zum
+          Training seiner Modelle.
+        </li>
+        <li>
+          <strong>Optional Google Gemini</strong> (Google AI Studio API).
+          Wird gegebenenfalls als alternativer LLM-Anbieter genutzt; in
+          dem Fall werden die Inhalte an Google LLC, Mountain View, USA
+          übermittelt. Übermittlung in Drittländer auf Basis der
+          Standard-Vertragsklauseln und des EU-US Data Privacy Framework.
+          Google nutzt die Inhalte gemäß seinen AI-Studio-API-Bedingungen
+          nicht für Modell-Training.
+        </li>
+      </ul>
+      <p>
+        Welcher Anbieter konkret verwendet wird, hängt von der
+        server-seitigen Konfiguration zum Zeitpunkt deiner Anfrage ab.
+        Diese Datenschutzerklärung wird aktualisiert, sobald sich die
+        Standard-Routing-Konfiguration ändert.
+      </p>
+      <p>
+        <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO
+        (Vertragserfüllung — ohne LLM-Anfrage keine Vokabel-Extraktion).
+        Wenn du keine LLM-Verarbeitung wünschst, vermeide die Funktion
+        "Inhalt hinzufügen" und nutze ausschließlich den manuellen
+        Vokabel-Eintrag.
+      </p>
+
+      <h2>6. On-Device-OCR</h2>
+      <p>
+        Bilder, die du der App über die Foto-Bibliothek oder Kamera
+        übergibst, werden <strong>on-device</strong> mit Google ML Kit
+        Text Recognition verarbeitet
+        (<code>@infinitered/react-native-mlkit-text-recognition</code>).
+        Die Bild-Inhalte verlassen dein Gerät dabei <strong>nicht</strong>.
+        Lediglich der extrahierte Text wird anschließend — falls du dich
+        für die Vokabel-Extraktion entscheidest — an den
+        LLM-Backend-Proxy übermittelt (siehe Abschnitt 5).
+      </p>
+
+      <h2>7. Berechtigungen, die die App anfordert</h2>
+      <table>
+        <thead>
+          <tr><th>Berechtigung</th><th>Zweck</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Internet</td><td>Backend-Anfragen an anyvoc-backend.fly.dev und Supabase</td></tr>
+          <tr><td>Kamera</td><td>Optional, um Vokabel-Quelltexte zu fotografieren (OCR)</td></tr>
+          <tr><td>Foto-Bibliothek (iOS)</td><td>Optional, um Bilder mit Text aus der Galerie auszuwählen</td></tr>
+          <tr><td>Audio-Aufnahme</td><td>Reserviert für zukünftige Sprach-Funktionen — derzeit ungenutzt</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Du kannst Kamera- und Foto-Bibliotheks-Berechtigungen jederzeit
+        in den System-Einstellungen deines Geräts entziehen.
+        Internet-Zugriff ist für den Anmelde- und LLM-Funktionsumfang
+        erforderlich; ohne Internet bleibt die App in einem reinen
+        Offline-Modus mit lokalen Vokabeln nutzbar.
+      </p>
+
+      <h2>8. Bezahl-Funktionen (zukünftig)</h2>
+      <p>
+        Sobald die kostenpflichtigen Pro-Funktionen aktiviert sind, läuft
+        die Abrechnung ausschließlich über das Bezahlsystem deines Stores
+        (Apple App Store oder Google Play). Anyvoc erhält vom Store nur
+        die Bestätigung, ob du eine aktive Pro-Berechtigung hast — keine
+        Zahlungsdaten, keine Kreditkarten-Details, keine Bank-Verbindung.
+      </p>
+      <p>
+        Es ist geplant, dafür den Anbieter <strong>RevenueCat</strong>
+        als Receipt-Validation-Schicht einzusetzen. Sobald dieser Dienst
+        live ist, wird diese Datenschutzerklärung um den entsprechenden
+        Abschnitt ergänzt.
+      </p>
+
+      <h2>9. Crash-Reporting (zukünftig)</h2>
+      <p>
+        Es ist geplant, anonyme Crash-Reports über Sentry zu erfassen,
+        um App-Abstürze beheben zu können. Solche Reports enthalten
+        Stack-Traces, Geräte-Modell und Betriebssystem-Version,
+        <strong>keine</strong> persönlichen Daten,
+        <strong>keine</strong> Vokabel-Inhalte, <strong>keine</strong>
+        E-Mail. Sobald Crash-Reporting aktiv ist, wird diese
+        Datenschutzerklärung entsprechend aktualisiert.
+      </p>
+
+      <h2>10. Cookies und Tracking</h2>
+      <p>
+        Die App selbst nutzt <strong>keine</strong> Cookies und
+        <strong>kein</strong> Tracking, kein Werbe-Netzwerk und keine
+        Analytics-SDKs. Die zugehörige Webseite anyvoc.eu kann technisch
+        notwendige Session-Cookies setzen; eine analytische oder
+        marketingbezogene Auswertung findet dort nicht statt.
+      </p>
+
+      <h2>11. Deine Rechte nach DSGVO</h2>
+      <p>Du hast jederzeit das Recht auf:</p>
+      <ul>
+        <li>Auskunft über die zu deiner Person gespeicherten Daten (Art. 15)</li>
+        <li>Berichtigung unrichtiger Daten (Art. 16)</li>
+        <li>Löschung deiner Daten (Art. 17)</li>
+        <li>Einschränkung der Verarbeitung (Art. 18)</li>
+        <li>Datenübertragbarkeit (Art. 20)</li>
+        <li>Widerspruch gegen die Verarbeitung (Art. 21)</li>
+      </ul>
+      <p>
+        Soweit die Verarbeitung auf Einwilligung beruht, kannst du diese
+        jederzeit widerrufen.
+      </p>
+      <p>
+        Bitte richte solche Anfragen an
+        <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a>. Da
+        wir serverseitig kaum personenbezogene Daten halten (nur das
+        Anmelde-Konto, falls vorhanden), kann eine Auskunftsanfrage in
+        der Regel innerhalb weniger Tage beantwortet werden.
+      </p>
+      <p>
+        Du hast außerdem das Recht, dich bei einer
+        Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig ist für
+        uns:
+      </p>
+      <blockquote>
+        Der Landesbeauftragte für den Datenschutz und die
+        Informationsfreiheit Baden-Württemberg<br />
+        Postfach 10 29 32, 70025 Stuttgart<br />
+        <a href="https://www.baden-wuerttemberg.datenschutz.de/" rel="noopener">https://www.baden-wuerttemberg.datenschutz.de/</a>
+      </blockquote>
+
+      <h2>12. Änderungen dieser Datenschutzerklärung</h2>
+      <p>
+        Wir können diese Datenschutzerklärung anpassen, wenn sich die
+        App, die Verarbeitungs-Zwecke oder die rechtlichen
+        Rahmenbedingungen ändern. Die jeweils aktuelle Version ist unter
+        <a href="https://anyvoc.eu/legal/datenschutz.html" rel="noopener">https://anyvoc.eu/legal/datenschutz.html</a>
+        abrufbar. Bei wesentlichen Änderungen weisen wir in der App auf
+        die Aktualisierung hin.
+      </p>
+    </article>
+
+    <footer>
+      <div class="footer-inner">
+        <p>© 2026 Anyvoc. Alle Rechte vorbehalten.</p>
+        <nav class="footer-links" aria-label="Rechtliches">
+          <a href="/legal/impressum.html">Impressum</a>
+          <a href="/legal/datenschutz.html">Datenschutz</a>
+          <a href="/legal/agb.html">AGB</a>
+          <a href="/legal/faq.html">FAQ</a>
+        </nav>
+        <div class="lang-picker" aria-label="Sprache">
+          <a href="/en/legal/privacy.html">English</a>
+          <span class="sep" aria-hidden="true">|</span>
+          <a href="/legal/datenschutz.html" class="active" aria-current="true">Deutsch</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
