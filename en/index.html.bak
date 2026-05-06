@@ -19,12 +19,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <main class="hero">
       <div class="logo-container">
-        <img src="logo.png" alt="Anyvoc" width="200" height="200" />
+        <img src="/logo.png" alt="Anyvoc" width="200" height="200" />
       </div>
 
       <h1>Welcome to Anyvoc</h1>
@@ -39,13 +39,13 @@
       <div class="footer-inner">
         <p>© 2026 Anyvoc. All rights reserved.</p>
         <nav class="footer-links" aria-label="Legal">
-          <a href="en/legal/imprint.html">Imprint</a>
-          <a href="en/legal/privacy.html">Privacy</a>
-          <a href="en/legal/terms.html">Terms</a>
-          <a href="en/legal/faq.html">FAQ</a>
+          <a href="/en/legal/imprint.html">Imprint</a>
+          <a href="/en/legal/privacy.html">Privacy</a>
+          <a href="/en/legal/terms.html">Terms</a>
+          <a href="/en/legal/faq.html">FAQ</a>
         </nav>
         <div class="lang-picker" aria-label="Language">
-          <a href="en/" class="active" aria-current="true">English</a>
+          <a href="/en/" class="active" aria-current="true">English</a>
           <span class="sep" aria-hidden="true">|</span>
           <a href="/">Deutsch</a>
         </div>
