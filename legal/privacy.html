@@ -14,12 +14,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
     <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
@@ -49,7 +43,48 @@
       </p>
       <p>Email: <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a></p>
 
-      <h2>2. Principle: your data stays on your device</h2>
+      <h2>2. Website hosting and server logs (anyvoc.eu)</h2>
+      <p>
+        The website anyvoc.eu is hosted on
+        <strong>GitHub Pages</strong>, a service of GitHub, Inc.,
+        88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.
+        When you visit the site, GitHub processes the technical access
+        data required to deliver the page (IP address, timestamp,
+        requested URL, HTTP status, user agent, referrer). These
+        request data are processed in standard web-server log files
+        on GitHub's infrastructure.
+      </p>
+      <p>
+        <strong>Purpose:</strong> Delivery of the page, security
+        (abuse / DDoS protection), basic operational integrity. We
+        ourselves do not access these logs and do not link them to
+        any user account.
+      </p>
+      <p>
+        <strong>Legal basis:</strong> Art. 6 (1) (f) GDPR — legitimate
+        interest in operating a publicly available website.
+      </p>
+      <p>
+        <strong>Third-country transfer:</strong> GitHub is a US
+        company; processing may occur in the USA. The transfer is
+        based on the EU-US Data Privacy Framework (GitHub is
+        certified) and the Standard Contractual Clauses according to
+        Art. 46 (2) (c) GDPR. Details:
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub Privacy Statement</a>.
+      </p>
+      <p>
+        <strong>Retention:</strong> Server-side log retention is
+        governed by GitHub's policy and is not under our control. We
+        do not download, store, or analyse these logs ourselves.
+      </p>
+      <p>
+        The website itself is purely static and contains no analytics,
+        no tracking pixels, no advertising networks, and no third-party
+        embeds. Web fonts (Inter) are self-hosted on the same domain
+        and are not loaded from a third party.
+      </p>
+
+      <h2>3. Principle: your data stays on your device</h2>
       <p>
         Anyvoc stores all vocabulary, content, learning progress, and
         settings <strong>locally on your device</strong> in a SQLite
@@ -59,8 +94,8 @@
       </p>
       <p>The only external connections the app makes are:</p>
       <ul>
-        <li>An optional sign-in backend (Supabase), see section 4.</li>
-        <li>An LLM backend for vocabulary extraction and translation, see section 5.</li>
+        <li>An optional sign-in backend (Supabase), see section 5.</li>
+        <li>An LLM backend for vocabulary extraction and translation, see section 6.</li>
       </ul>
       <p>
         If you use the app in guest mode and don't submit any content
@@ -68,7 +103,7 @@
         transferred to external services.
       </p>
 
-      <h2>3. Local storage on your device</h2>
+      <h2>4. Local storage on your device</h2>
       <p>
         The following categories are stored exclusively in the app's
         local SQLite database:
@@ -96,7 +131,7 @@
         storage).
       </p>
 
-      <h2>4. Authentication via Supabase (optional)</h2>
+      <h2>5. Authentication via Supabase (optional)</h2>
       <p>
         Anyvoc can be used without sign-in, in guest mode. Users sign in
         for one of these reasons:
@@ -147,7 +182,7 @@
         vocabulary data is removed from the device in the same step.
       </p>
 
-      <h2>5. LLM backend for vocabulary extraction (anyvoc-backend.fly.dev)</h2>
+      <h2>6. LLM backend for vocabulary extraction (anyvoc-backend.fly.dev)</h2>
       <p>
         When you submit content (text, image OCR, web link) to the app
         for vocabulary extraction or translation, the app sends the
@@ -214,17 +249,17 @@
         use only manual vocabulary entry.
       </p>
 
-      <h2>6. On-device OCR</h2>
+      <h2>7. On-device OCR</h2>
       <p>
         Images you hand to the app via the photo library or camera are
         processed <strong>on-device</strong> with Google ML Kit Text
         Recognition (<code>@infinitered/react-native-mlkit-text-recognition</code>).
         Image content does <strong>not</strong> leave your device. Only
         the extracted text is, if you choose vocabulary extraction,
-        forwarded to the LLM backend proxy (see section 5).
+        forwarded to the LLM backend proxy (see section 6).
       </p>
 
-      <h2>7. Permissions the app requests</h2>
+      <h2>8. Permissions the app requests</h2>
       <table>
         <thead>
           <tr><th>Permission</th><th>Purpose</th></tr>
@@ -243,7 +278,7 @@
         usable in pure offline mode with locally-stored vocabulary.
       </p>
 
-      <h2>8. Paid features (future)</h2>
+      <h2>9. Paid features (future)</h2>
       <p>
         Once the paid Pro features are activated, billing runs
         exclusively through your store's payment system (Apple App
@@ -257,7 +292,7 @@
         privacy policy will be amended with the relevant section.
       </p>
 
-      <h2>9. Crash reporting (future)</h2>
+      <h2>10. Crash reporting (future)</h2>
       <p>
         We plan to collect anonymous crash reports via Sentry to fix
         app crashes. Such reports contain stack traces, device model,
@@ -267,16 +302,16 @@
         be updated accordingly.
       </p>
 
-      <h2>10. Cookies and tracking</h2>
+      <h2>11. Cookies and tracking</h2>
       <p>
-        The app itself uses <strong>no</strong> cookies and
-        <strong>no</strong> tracking, no ad networks, and no analytics
-        SDKs. The associated website anyvoc.eu may set strictly
-        necessary session cookies; no analytical or
-        marketing-related processing takes place there.
+        Neither the app nor the website anyvoc.eu sets any cookies of
+        their own, uses tracking pixels, ad networks, or analytics
+        SDKs. The website is fully static; no consent banner is
+        required because no non-essential storage access takes place
+        on the visitor's device (TTDSG § 25).
       </p>
 
-      <h2>11. Your rights under GDPR</h2>
+      <h2>12. Your rights under GDPR</h2>
       <p>You have the right at any time to:</p>
       <ul>
         <li>Information about the data stored about you (Art. 15)</li>
@@ -309,7 +344,7 @@
         <a href="https://www.baden-wuerttemberg.datenschutz.de/" rel="noopener">https://www.baden-wuerttemberg.datenschutz.de/</a>
       </blockquote>
 
-      <h2>12. Changes to this privacy policy</h2>
+      <h2>13. Changes to this privacy policy</h2>
       <p>
         We may amend this privacy policy when the app, the processing
         purposes, or the legal framework changes. The current version
