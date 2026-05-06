@@ -243,9 +243,30 @@
         Images you hand to the app via the photo library or camera are
         processed <strong>on-device</strong> with Google ML Kit Text
         Recognition (<code>@infinitered/react-native-mlkit-text-recognition</code>).
-        Image content does <strong>not</strong> leave your device. Only
-        the extracted text is, if you choose vocabulary extraction,
-        forwarded to the LLM backend proxy (see section 6).
+        This applies to <strong>both iOS and Android</strong>: the
+        library binds the native Google ML Kit SDK on each platform
+        (<code>GoogleMLKit/TextRecognition</code> pod on iOS,
+        <code>com.google.mlkit:text-recognition</code> on Android). No
+        image content and no extracted text is sent to Google for the
+        OCR itself.
+      </p>
+      <p>
+        Only the extracted text is, if you choose vocabulary
+        extraction, forwarded to our own LLM backend proxy (see
+        section 6) — never to Google.
+      </p>
+      <p>
+        <strong>SDK-level telemetry:</strong> The Google ML Kit SDK may
+        transmit anonymous diagnostic and quality signals to Google
+        (e.g. SDK version, success / failure rates, model performance
+        statistics). These signals contain <strong>no</strong> image
+        content, <strong>no</strong> extracted text, and are not
+        linked to any user identifier we hold. The processing is
+        governed by the
+        <a href="https://developers.google.com/ml-kit/terms" rel="noopener">Google ML Kit Terms of Service</a>
+        and Google's privacy documentation. Processor: Google LLC,
+        Mountain View, USA; transfer based on the EU-US Data Privacy
+        Framework and Standard Contractual Clauses.
       </p>
 
       <h2>8. Permissions the app requests</h2>
