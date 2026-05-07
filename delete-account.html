@@ -48,8 +48,8 @@
       <h2>2. If you cannot access the app</h2>
       <p>
         Send an email to
-        <a href="mailto:feedback@anyvoc.eu?subject=Account%20deletion%20request">feedback@anyvoc.eu</a>
-        with the subject <em>"Account deletion request"</em>. To let
+        <a href="mailto:feedback@anyvoc.eu?subject=Account%20Deletion%20Request">feedback@anyvoc.eu</a>
+        with the subject <em>"Account Deletion Request"</em>. To let
         us locate your account, include in the email body:
       </p>
       <ul>
@@ -68,24 +68,31 @@
         line with Art. 17 GDPR.
       </p>
 
-      <h2>3. What is deleted</h2>
+      <h2>3. What is deleted — scope per path</h2>
+      <p>
+        Vocabulary, learning content, and review history live entirely
+        <strong>on your device</strong> in a local SQLite database.
+        Account data (authentication, sign-in identity) lives on
+        Supabase. Each path therefore has a different scope:
+      </p>
       <ul>
         <li>
-          Your authentication record at Supabase: user ID (UUID),
-          email or Apple pseudonym address, sign-in timestamps,
-          refresh and access tokens.
+          <strong>In-app flow (Settings → Delete Account):</strong>
+          Removes the local SQLite database on that device
+          (vocabulary, content, progress, settings) <em>and</em>
+          deletes your authentication record at Supabase in the same
+          step.
         </li>
         <li>
-          When you use the in-app flow: the local SQLite database on
-          the device the request originates from (vocabulary, content,
-          progress, settings).
+          <strong>Web / email request:</strong> Deletes only the
+          <strong>Supabase authentication record</strong> server-side
+          (user ID, email or Apple pseudonym address, sign-in
+          timestamps, refresh and access tokens). It does
+          <strong>not</strong> reach the local database on your
+          device. To erase local content, also use the in-app flow or
+          simply uninstall the app on each device.
         </li>
       </ul>
-      <p>
-        Local data on additional devices that you do not personally
-        interact with cannot be deleted remotely. To clear those,
-        uninstall the app on each device.
-      </p>
 
       <h2>4. What is retained, and why</h2>
       <p>
@@ -96,6 +103,23 @@
         security and operational integrity. These logs are not linked
         to your account and cannot be retroactively associated with
         you. Details: see the
+        <a href="legal/privacy.html">privacy policy</a>.
+      </p>
+
+      <h2>5. Swiss residents (FADP)</h2>
+      <p>
+        If you reside in Switzerland, the Swiss Federal Act on Data
+        Protection (FADP / DSG, in force since 1 September 2023)
+        grants you equivalent rights — in particular the right to
+        information (Art. 25 FADP) and the right to erasure
+        (Art. 32 FADP). You may exercise these rights via the same
+        email channel above. The competent supervisory authority is
+        the
+        <a href="https://www.edoeb.admin.ch/" rel="noopener">Federal Data Protection and Information Commissioner (FDPIC / EDÖB)</a>.
+      </p>
+
+      <p>
+        See also: <a href="legal/imprint.html">imprint</a> ·
         <a href="legal/privacy.html">privacy policy</a>.
       </p>
 
