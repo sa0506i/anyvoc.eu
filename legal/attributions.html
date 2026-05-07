@@ -6,7 +6,7 @@
     <title>Acknowledgements — Anyvoc</title>
     <meta
       name="description"
-      content="Open-source software, language data, and trademark acknowledgements for the Anyvoc app and website."
+      content="Open-source data and software acknowledgements for the Anyvoc app and website."
     />
     <meta name="theme-color" content="#050D1A" />
 
@@ -30,15 +30,12 @@
       <p class="lead">Last updated: 2026-05-07.</p>
 
       <p>
-        Anyvoc stands on the shoulders of excellent open-source
-        libraries and publicly released language data. This page lists
-        the most relevant third-party sources and their licenses, with
-        thanks to their authors and maintainers.
+        Anyvoc builds on publicly licensed language data and
+        open-source software. The notices below fulfil the license
+        obligations to the original authors.
       </p>
 
-      <h2>Language and data sources</h2>
-
-      <h3>Word frequency tables</h3>
+      <h2>Word frequency tables</h2>
       <p><strong>Source:</strong> Leipzig Corpora Collection, Leipzig University.</p>
       <blockquote>
         Goldhahn, D., Eckart, T., &amp; Quasthoff, U. (2012).
@@ -57,182 +54,47 @@
           <strong>URL:</strong>
           <a href="https://wortschatz.uni-leipzig.de" rel="noopener">wortschatz.uni-leipzig.de</a>
         </li>
-        <li>
-          <strong>Used for:</strong> the on-device CEFR-level model
-          across all 12 supported languages.
-        </li>
       </ul>
 
-      <h3>Age-of-Acquisition norms (English)</h3>
+      <h2>Age-of-Acquisition norms (English)</h2>
       <blockquote>
         Kuperman, V., Stadthagen-Gonzalez, H., &amp; Brysbaert, M. (2012).
         <em>Age-of-acquisition ratings for 30,000 English words.</em>
         Behavior Research Methods, 44(4), 978–990.
       </blockquote>
-      <p>
-        Used as the second feature of the English CEFR classifier.
-      </p>
-
-      <h3>Age-of-Acquisition estimates (11 other languages)</h3>
-      <p>
-        Generated offline with a language model on the Kuperman scale
-        (2–18) because no comparably large human-norm data set has
-        been published for these languages. The scale follows the
-        methodology of Kuperman et al. 2012, with no claim of
-        identical validity.
-      </p>
 
       <h2>Open-source software</h2>
       <p>
-        Anyvoc is a native iOS and Android app built on React Native
-        and Expo. The libraries below form the foundation; all are
-        released under permissive licenses (MIT, Apache 2.0, or ISC)
-        and are used under their respective terms.
+        Anyvoc includes open-source software released under
+        permissive licenses (in particular Apache 2.0, MIT, ISC and
+        BSD). The associated copyright notices and full license
+        texts are bundled with the published app.
       </p>
-
-      <h3>Framework and runtime</h3>
-      <ul>
-        <li><strong>React Native</strong> (Meta Platforms, Inc.) — MIT</li>
-        <li><strong>React</strong> (Meta Platforms, Inc.) — MIT</li>
-        <li>
-          <strong>Expo SDK</strong> and Expo modules
-          (<code>expo-router</code>, <code>expo-sqlite</code>,
-          <code>expo-secure-store</code>, <code>expo-image-picker</code>,
-          <code>expo-share-intent</code>, <code>expo-localization</code>,
-          <code>expo-apple-authentication</code>, <code>expo-audio</code>,
-          <code>expo-speech</code>, <code>expo-clipboard</code>,
-          <code>expo-file-system</code>, <code>expo-image</code>,
-          <code>expo-image-manipulator</code>,
-          <code>expo-linear-gradient</code>, <code>expo-linking</code>,
-          <code>expo-splash-screen</code>, <code>expo-status-bar</code>,
-          and others) — MIT, Copyright Expo, Inc.
-        </li>
-        <li>
-          <strong>Hermes Engine</strong> — MIT, Copyright Meta
-          Platforms, Inc.
-        </li>
-      </ul>
-
-      <h3>Specific libraries</h3>
-      <ul>
-        <li>
-          <strong>@mozilla/readability</strong> — Apache License 2.0,
-          Copyright Mozilla Foundation. Used for offline article
-          extraction from shared web links.
-          <a href="https://github.com/mozilla/readability" rel="noopener">github.com/mozilla/readability</a>
-        </li>
-        <li>
-          <strong>@infinitered/react-native-mlkit-text-recognition</strong>
-          — MIT, Copyright Infinite Red. JavaScript bridge to
-          <strong>Google ML Kit Text Recognition</strong> (Apache
-          License 2.0, Copyright Google LLC) — used for on-device
-          OCR.
-          <a href="https://developers.google.com/ml-kit/terms" rel="noopener">developers.google.com/ml-kit/terms</a>
-        </li>
-        <li>
-          <strong>linkedom</strong> — ISC License, Copyright Andrea
-          Giammarchi. DOM parser for the Readability pipeline.
-        </li>
-        <li>
-          <strong>franc-min</strong> — MIT, Copyright Titus Wormer.
-          Offline language detection via trigram model.
-        </li>
-        <li>
-          <strong>fastest-levenshtein</strong> — MIT, Copyright Kasper
-          Unn Weihe. Used for the typing-quiz spelling tolerance.
-        </li>
-        <li>
-          <strong>zustand</strong> — MIT, Copyright Paul Henschel
-          &amp; Daishi Kato. State-management library.
-        </li>
-        <li>
-          <strong>zod</strong> — MIT, Copyright Colin McDonnell.
-          Schema validation.
-        </li>
-        <li>
-          <strong>@supabase/supabase-js</strong> — MIT, Copyright
-          Supabase, Inc. Auth client.
-        </li>
-        <li>
-          <strong>@react-native-google-signin/google-signin</strong>
-          — MIT (Android only — see FAQ).
-        </li>
-        <li>
-          <strong>react-native-gesture-handler</strong> — MIT,
-          Copyright Software Mansion.
-        </li>
-        <li>
-          <strong>react-native-safe-area-context</strong> — MIT,
-          Copyright Th3rd Wave.
-        </li>
-        <li>
-          <strong>react-native-screens</strong> — MIT, Copyright
-          Software Mansion.
-        </li>
-        <li>
-          <strong>react-native-url-polyfill</strong> — MIT,
-          Copyright Charles Krempeaux.
-        </li>
-        <li>
-          <strong>@expo/vector-icons</strong> + Ionicons — MIT,
-          Copyright Expo, Inc. and Ionic.
-        </li>
-      </ul>
-
-      <h3>Backend components</h3>
-      <ul>
-        <li>
-          <strong>Express.js</strong> — MIT, Copyright TJ Holowaychuk
-          and Express contributors. LLM proxy server.
-        </li>
-        <li>
-          <strong>Mistral AI API</strong> — used as the default LLM
-          provider; Anyvoc is not affiliated with Mistral AI.
-          Mistral AI® is a trademark of Mistral AI SAS.
-        </li>
-        <li>
-          <strong>Google AI Studio API / Gemini</strong> — usable as
-          an alternative LLM provider; Anyvoc is not affiliated with
-          Google LLC. Gemini™ and Google™ are trademarks of Google LLC.
-        </li>
-      </ul>
 
       <h2>Trademarks</h2>
       <ul>
         <li>
-          <strong>Apple®</strong>, <strong>App Store®</strong>, and
+          <strong>Apple®</strong>, <strong>App Store®</strong> and
           <strong>Sign in with Apple™</strong> are trademarks of
           Apple Inc.
         </li>
         <li>
-          <strong>Google Play™</strong>, <strong>Google Sign-In™</strong>,
-          and <strong>Gemini™</strong> are trademarks of Google LLC.
+          <strong>Google Play™</strong> and
+          <strong>Google Sign-In™</strong> are trademarks of Google
+          LLC.
         </li>
         <li>
-          Languages, countries, CEFR levels, and other terms not
-          listed here are, where applicable, trademarks of or property
-          of their respective owners.
+          Other names are, where applicable, trademarks of their
+          respective owners.
         </li>
       </ul>
-
-      <h2>Full license texts</h2>
-      <p>
-        The full text of the licenses (MIT, Apache License 2.0, ISC,
-        CC BY 4.0) is bundled with the respective libraries and is
-        available through the repositories linked above. A request to
-        the contact below will get the complete texts compiled and
-        sent.
-      </p>
 
       <h2>Something to correct?</h2>
       <p>
         If an attribution is missing or wrong on this page, please
         let us know:
         <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a>.
-        We will update the page and the app listing promptly.
       </p>
-
-      <p class="lead">Last updated: 2026-05-07.</p>
     </article>
 
     <footer>
