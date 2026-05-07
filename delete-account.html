@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Delete your Anyvoc account — Anyvoc</title>
+    <meta
+      name="description"
+      content="How to delete your Anyvoc account and the associated personal data — in the app or by email."
+    />
+    <meta name="theme-color" content="#050D1A" />
+
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <a href="./" class="brand">
+        <img src="logo.png" alt="" />
+        <span>Anyvoc</span>
+      </a>
+    </header>
+
+    <article class="legal">
+      <a href="./" class="back-link">← Home</a>
+      <h1>Delete your Anyvoc account</h1>
+      <p class="lead">
+        You can delete your Anyvoc account and the associated data at
+        any time. The fastest path is from inside the app; if that is
+        not possible, you can request deletion by email.
+      </p>
+
+      <h2>1. Preferred path: in the app</h2>
+      <ol>
+        <li>Open Anyvoc on your device.</li>
+        <li>Go to <em>Settings</em>.</li>
+        <li>Choose <em>Delete Account</em> and confirm.</li>
+      </ol>
+      <p>
+        This irrevocably removes your local vocabulary database on
+        that device <strong>and</strong> your authentication record at
+        Supabase in the same step. No further action is required.
+      </p>
+
+      <h2>2. If you cannot access the app</h2>
+      <p>
+        Send an email to
+        <a href="mailto:feedback@anyvoc.eu?subject=Account%20deletion%20request">feedback@anyvoc.eu</a>
+        with the subject <em>"Account deletion request"</em>. To let
+        us locate your account, include in the email body:
+      </p>
+      <ul>
+        <li>
+          The email address you used to sign in. For "Sign in with
+          Apple" users this is typically the pseudonymous
+          <code>@privaterelay.appleid.com</code> address Apple assigned.
+        </li>
+        <li>
+          Optionally: the platform you signed in from (iOS or Android).
+        </li>
+      </ul>
+      <p>
+        We confirm receipt within a few business days and complete the
+        deletion within <strong>30 days</strong> at the latest, in
+        line with Art. 17 GDPR.
+      </p>
+
+      <h2>3. What is deleted</h2>
+      <ul>
+        <li>
+          Your authentication record at Supabase: user ID (UUID),
+          email or Apple pseudonym address, sign-in timestamps,
+          refresh and access tokens.
+        </li>
+        <li>
+          When you use the in-app flow: the local SQLite database on
+          the device the request originates from (vocabulary, content,
+          progress, settings).
+        </li>
+      </ul>
+      <p>
+        Local data on additional devices that you do not personally
+        interact with cannot be deleted remotely. To clear those,
+        uninstall the app on each device.
+      </p>
+
+      <h2>4. What is retained, and why</h2>
+      <p>
+        We do not retain personal data linked to your account after
+        deletion. Anonymous, non-identifying request logs at our LLM
+        backend proxy (timestamp, model, provider — no IP, no user
+        ID, no content) may persist for a short retention window for
+        security and operational integrity. These logs are not linked
+        to your account and cannot be retroactively associated with
+        you. Details: see the
+        <a href="legal/privacy.html">privacy policy</a>.
+      </p>
+
+      <p class="lead">Last updated: 2026-05-05.</p>
+    </article>
+
+    <footer>
+      <div class="footer-inner">
+        <p>© 2026 Anyvoc. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Legal">
+          <a href="legal/imprint.html">Imprint</a>
+          <a href="legal/privacy.html">Privacy</a>
+          <a href="legal/terms.html">Terms</a>
+          <a href="legal/faq.html">FAQ</a>
+          <a href="delete-account.html">Delete account</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
