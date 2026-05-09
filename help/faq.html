@@ -174,11 +174,13 @@
 
       <h3>Why are some words missing in puzzle mode?</h3>
       <p>
-        Puzzle mode skips vocabulary whose answer is longer than 18
-        characters. Beyond that, the letter-tile grid produces too many
-        small buttons to play comfortably on a phone screen. The
-        skipped cards are still trained normally in flashcard and
-        typing mode — they only sit out for the puzzle round.
+        Puzzle mode skips vocabulary whose answer is longer than 16
+        characters. The letter-tile grid is sized to fit 8 tiles per
+        row, so the 16-character cap keeps every word at most 2 rows
+        — anything longer would shrink the tiles below a comfortable
+        tap target. The skipped cards are still trained normally in
+        flashcard and typing mode; they only sit out for the puzzle
+        round.
       </p>
       <p>
         If you turn on puzzle mode and find that every card on the
@@ -196,7 +198,7 @@
       </p>
       <p>
         If no card on the device fits puzzle mode (every answer is
-        longer than 18 characters), puzzle is left out of the draw
+        longer than 16 characters), puzzle is left out of the draw
         for that round. So you'll never land in an empty round just
         because the random pick happened to be puzzle.
       </p>
