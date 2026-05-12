@@ -24,7 +24,7 @@
     <article class="legal">
       <a href="../" class="back-link">← Home</a>
       <h1>Anyvoc — FAQ</h1>
-      <p class="lead">Last updated: 2026-05-05.</p>
+      <p class="lead">Last updated: 2026-05-12.</p>
 
       <p>
         This FAQ covers the most common questions about Anyvoc. If you
@@ -134,7 +134,27 @@
       <h3>How many cards per round?</h3>
       <p>
         Twenty by default. You can adjust this in
-        <em>Settings → Cards per round</em> between 5 and 50.
+        <em>Settings → Cards per round</em> — pick 10, 15, 20, 25, or 30.
+      </p>
+
+      <h3>What is the daily learning goal?</h3>
+      <p>
+        The Daily Learning Goal in <em>Settings → Daily Learning Goal</em>
+        (pick 10, 20, 30, 40, or 50, default 20) caps how many
+        <strong>new</strong> words land in your "Due today" pool each day.
+        Words you already started learning continue cycling through the
+        Leitner schedule normally — only never-seen-before words are
+        capped. Lets you import a 250-word basics list without being
+        flooded on day one.
+      </p>
+
+      <h3>What does the "Due today" row under Overall Progress show?</h3>
+      <p>
+        The small coloured pills below the main Leitner boxes show how
+        many words from each box are due for review <em>today</em>,
+        after the Daily Learning Goal cap. Tap a pill to jump to the
+        Vocabulary tab filtered to that subset — useful for previewing
+        what a session will actually present.
       </p>
 
       <h3>What's the streak in the trainer stats?</h3>
@@ -171,6 +191,26 @@
         </li>
       </ul>
       <p>Switch in <em>Settings → Quiz mode</em>.</p>
+
+      <h3>How does the speaker icon on the trainer cards work?</h3>
+      <p>
+        Tap the speaker (top-right of a card) to hear the
+        learning-language word read by your device's text-to-speech
+        engine. Voice quality + accent depend on your OS — Anyvoc
+        does not bundle its own voices. Available to every tier
+        (Free / Guest / Pro).
+      </p>
+      <p>
+        For nine languages — Portuguese, Spanish, English, French,
+        German, Italian, Dutch, Norwegian, Swedish — a small info
+        icon appears <em>top-left</em>. Tap it for a popup listing
+        the regional voice variants (e.g. pt-BR vs pt-PT, en-US vs
+        en-GB) and where to switch between them:
+      </p>
+      <ul>
+        <li><strong>Android:</strong> Settings → System → Languages → Text-to-speech output</li>
+        <li><strong>iOS:</strong> Settings → Accessibility → Spoken Content → Voices</li>
+      </ul>
 
       <h3>Why are some words missing in puzzle mode?</h3>
       <p>
@@ -250,12 +290,14 @@
         On cancellation a dialog appears in which you pick
         <strong>one</strong> language to keep. Vocabulary and content
         of all other languages are deleted. This is not reversible —
-        export your vocabulary first via <em>Settings → Export</em> if
-        you want to keep it.
+        create a backup first via <em>Settings → Create / Restore
+        Backup → Create backup</em> <strong>while you're still Pro</strong>
+        if you want to keep the other languages. The backup feature is
+        Pro-only, so it's not available after cancellation.
       </p>
 
       <h3>I'm only learning one language — does Pro give me anything?</h3>
-      <p>Three visible benefits even in a single-language setup:</p>
+      <p>Four visible benefits even in a single-language setup:</p>
       <ul>
         <li>
           <strong>Tap-to-save</strong>: long-press a word in the
@@ -266,6 +308,11 @@
         <li>
           <strong>Full-text translation</strong> of the original next to
           the original.
+        </li>
+        <li>
+          <strong>Data backup</strong>: export your full vocabulary +
+          content + review streak as a JSON file, restore it on a new
+          device or after a reset.
         </li>
         <li>
           <strong>Higher limits</strong>: longer texts and no daily
@@ -333,16 +380,44 @@
       <p>
         Locally on your device, in a SQLite database. There is no
         cloud sync. When you switch to a new device you lose your
-        vocabulary collection — export it first via
-        <em>Settings → Export</em>.
+        vocabulary collection — export a backup first
+        (<em>Settings → Create / Restore Backup</em>, Pro feature).
       </p>
 
       <h3>How do I export my vocabulary?</h3>
       <p>
-        <em>Settings → Data Handling → Export</em>. You receive a JSON
-        file with all vocabulary, content, and Leitner state. You can
-        import it on another device via
-        <em>Settings → Data Handling → Import</em>.
+        <em>Settings → Data Handling → Create / Restore Backup → Create
+        backup</em>. You receive a JSON file with all vocabulary,
+        content cards, per-row language attribution, and review streak.
+        On another device, restore it via <em>Restore backup</em> on
+        the same screen. Backup is a Pro feature.
+      </p>
+
+      <h3>How do I import a list of words from a CSV or Excel file?</h3>
+      <p>
+        <em>Settings → Data Handling → Import Vocabulary Lists</em>.
+        Two source buttons:
+      </p>
+      <ul>
+        <li>
+          <strong>Import CSV</strong> — pick a CSV, TSV or plain text
+          file. Rows like <code>Haus, casa</code> or
+          <code>Haus<span style="font-family:monospace">\t</span>casa</code>
+          are recognised as bilingual pairs.
+        </li>
+        <li>
+          <strong>Import Excel</strong> — pick an <code>.xlsx</code> or
+          <code>.xls</code> file. The first sheet is read and converted
+          to the same format as CSV — column A becomes the learning
+          word, column B the translation.
+        </li>
+      </ul>
+      <p>
+        The picked content lands in the editable text area; you can
+        review and edit before tapping Save. Available to every tier,
+        including Guest. (List import is <strong>not</strong> the same
+        as Restore Backup — the latter handles full <code>.anyvoc.json</code>
+        snapshots and is Pro-only.)
       </p>
 
       <h3>What happens when I'm offline?</h3>
