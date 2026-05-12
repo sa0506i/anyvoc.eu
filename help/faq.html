@@ -393,7 +393,7 @@
         the same screen. Backup is a Pro feature.
       </p>
 
-      <h3>How do I import a list of words from a CSV or Excel file?</h3>
+      <h3>How do I import a list of words from a CSV or spreadsheet file?</h3>
       <p>
         <em>Settings → Data Handling → Import Vocabulary Lists</em>.
         Two source buttons:
@@ -406,10 +406,12 @@
           are recognised as bilingual pairs.
         </li>
         <li>
-          <strong>Import Excel</strong> — pick an <code>.xlsx</code> or
-          <code>.xls</code> file. The first sheet is read and converted
-          to the same format as CSV — column A becomes the learning
-          word, column B the translation.
+          <strong>Import Spreadsheet</strong> — pick an <code>.xlsx</code>,
+          <code>.xls</code>, <code>.ods</code>, or <code>.fods</code>
+          file (Excel, legacy Excel, LibreOffice / OpenOffice).
+          The first sheet is read and converted to the same format
+          as CSV — column A becomes the learning word, column B the
+          translation.
         </li>
       </ul>
       <p>
@@ -418,6 +420,12 @@
         including Guest. (List import is <strong>not</strong> the same
         as Restore Backup — the latter handles full <code>.anyvoc.json</code>
         snapshots and is Pro-only.)
+      </p>
+      <p>
+        <strong>Google Sheets:</strong> there's no direct integration —
+        but you can <em>File → Download → Microsoft Excel (.xlsx)</em>
+        or <em>OpenDocument (.ods)</em> in Google Sheets, then import
+        the downloaded file with the button above.
       </p>
 
       <h3>What happens when I'm offline?</h3>
