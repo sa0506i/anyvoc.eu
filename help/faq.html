@@ -248,11 +248,18 @@
 
       <h3>Why are some words I saved missing in the trainer?</h3>
       <p>
-        The app filters vocabulary by your configured CEFR minimum
-        (in <em>Settings → CEFR level</em>). If your level is set to
-        B1, A1 and A2 vocabulary is still stored in the database but
-        hidden in the trainer and the vocabulary list. Lower the
-        level and the words reappear immediately.
+        The app filters vocabulary by the CEFR levels you've selected
+        (in <em>Settings → CEFR level</em>). Vocabulary at levels
+        outside your current selection is still stored on the device
+        but hidden in the trainer and the vocabulary list. Change the
+        selection and the words reappear immediately.
+      </p>
+      <p>
+        <strong>Free</strong> users pick exactly one level at a time;
+        <strong>Pro</strong> users can select several levels in
+        parallel — useful when you're transitioning between levels
+        (e.g. B1 + B2 together) or want to review a wider span at
+        once.
       </p>
       <p>
         <strong>Exception:</strong> vocabulary you've added yourself
@@ -263,12 +270,13 @@
 
       <h3>How reliable is the CEFR classification?</h3>
       <p>
-        Anyvoc computes the level locally and deterministically from
-        word frequency (Leipzig corpus) and age-of-acquisition.
-        Accuracy is around 30 % exact + 70 % within ±1 level —
-        comparable to dedicated AI models on the same source data. The
-        learning takeaway: B1-classified words are reasonable for B1
-        learners; the model rarely lands two levels off.
+        Anyvoc computes the level locally and deterministically on
+        device, so the same word always lands at the same level for
+        the same language. Accuracy benchmarks at roughly 30 % exact
+        match and 70 % within ±1 level — on par with general-purpose
+        AI models. The learning takeaway: B1-classified words are
+        reasonable for B1 learners; the model rarely lands two levels
+        off.
       </p>
 
       <hr />
@@ -296,7 +304,7 @@
       </p>
 
       <h3>I'm only learning one language — does Pro give me anything?</h3>
-      <p>Four visible benefits even in a single-language setup:</p>
+      <p>Five visible benefits even in a single-language setup:</p>
       <ul>
         <li>
           <strong>Tap-to-save</strong>: long-press a word in the
@@ -307,6 +315,12 @@
         <li>
           <strong>Full-text translation</strong> of the original next to
           the original.
+        </li>
+        <li>
+          <strong>Multiple CEFR levels in parallel</strong>: select
+          several levels at once (e.g. B1 + B2) instead of one at a
+          time. Useful when you're transitioning between levels or
+          want a wider review span.
         </li>
         <li>
           <strong>Data backup</strong>: export your full vocabulary +
