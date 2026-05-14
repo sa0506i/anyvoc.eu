@@ -46,9 +46,8 @@
         </li>
         <li>
           <strong>Paste a link</strong> on the <em>Content</em> tab →
-          "+" → "Add Link". Anyvoc reads the page offline with
-          Readability; only when that fails does the content go to our
-          AI for processing.
+          "+" → "Add Link". Anyvoc reads the page offline; only when
+          that fails does the content go to our AI for processing.
         </li>
         <li>
           <strong>Enter text</strong> on the <em>Content</em> tab →
@@ -57,19 +56,19 @@
         </li>
         <li>
           <strong>Pick a photo</strong> on the <em>Content</em> tab →
-          "+" → "Choose Image". On-device OCR (Google ML Kit, fully
-          offline) extracts the text from the image — the image itself
-          does not leave your device.
+          "+" → "Choose Image". Fully on-device text recognition
+          extracts the text from the image — the image itself does
+          not leave your device.
         </li>
       </ol>
 
       <h3>Why does vocabulary extraction take 10–30 seconds?</h3>
       <p>
-        The app sends the text to a language-model provider (Mistral),
-        which generates vocabulary, translations, and
-        example sentences. Longer texts are processed in chunks, so a
-        whole article can take 30 seconds — the app shows a rotating
-        status hint of what's happening.
+        The app sends the text to our AI provider, which generates
+        vocabulary, translations, and example sentences. Longer texts
+        are processed in chunks, so a whole article can take 30
+        seconds — the app shows a rotating status hint of what's
+        happening.
       </p>
 
       <h3>Which images work with OCR?</h3>
@@ -84,9 +83,9 @@
       <h3>Is my content stored or used for AI training?</h3>
       <p>
         No. We don't store any of your content server-side — see the
-        <a href="privacy.html">privacy policy</a>. Mistral and
-        Google, per their API terms of use, do <strong>not</strong> use
-        the data for model training.
+        <a href="privacy.html">privacy policy</a> for the full list
+        of processors. Per their API terms of use, they do
+        <strong>not</strong> use your content for model training.
       </p>
 
       <hr />
@@ -333,9 +332,13 @@
 
       <h3>Do I need an account?</h3>
       <p>
-        No. Anyvoc works fully without sign-in, in guest mode. You only
-        need an account for Pro (purchase validation through your
-        store) or once your guest-login budget is exhausted.
+        Yes — Anyvoc requires an account for ongoing use. Guest mode
+        is meant for trying the app first: you get three guest
+        sessions to evaluate Anyvoc, after which you sign in to keep
+        using it (email OTP, plus Sign in with Apple on iOS and Sign
+        in with Google on Android). A signed-in account is also
+        required for Pro, since the store validates the purchase
+        against your sign-in.
       </p>
 
       <h3>What is the guest-login budget?</h3>
@@ -349,7 +352,7 @@
       <h3>Can I delete my account?</h3>
       <p>Yes — <em>Settings → Delete Account</em>. This deletes:</p>
       <ul>
-        <li>the server-side sign-in data at Supabase (email address, tokens, account metadata)</li>
+        <li>the server-side sign-in data (email address, tokens, account metadata)</li>
         <li>all local vocabulary, content, and learning progress on this device</li>
       </ul>
       <p>
@@ -365,11 +368,7 @@
           receive a 6-digit code, enter it. No password.
         </li>
         <li><strong>Sign in with Apple</strong> — iOS only.</li>
-        <li>
-          <strong>Sign in with Google</strong> — Android only. Not
-          available on iOS for technical reasons; iOS users have Apple
-          and email.
-        </li>
+        <li><strong>Sign in with Google</strong> — Android only.</li>
       </ul>
 
       <hr />
@@ -439,9 +438,9 @@
       <h3>Does Anyvoc send ad-tracking or analytics?</h3>
       <p>
         No. Anyvoc uses no ads, no trackers, no analytics SDKs. The
-        only external connections are sign-in (Supabase) and AI
-        processing (LLM backend) — both purely functional and described
-        in the <a href="privacy.html">privacy policy</a>.
+        only external connections are sign-in and AI processing —
+        both purely functional and described in the
+        <a href="privacy.html">privacy policy</a>.
       </p>
 
       <hr />
@@ -499,7 +498,7 @@
       <h3>Adding a link says "could not extract content".</h3>
       <p>
         Some sites are so JavaScript-heavy that the offline extractor
-        (Readability) finds no readable text. Try:
+        finds no readable text. Try:
       </p>
       <ul>
         <li>select the text from the page in the original app and share it as text instead of as a link to Anyvoc</li>
