@@ -46,8 +46,8 @@
         </li>
         <li>
           <strong>Paste a link</strong> on the <em>Content</em> tab →
-          "+" → "Add Link". Anyvoc reads the page offline; only when
-          that fails does the content go to our AI for processing.
+          "+" → "Add Link". Anyvoc fetches the page and pulls out
+          the readable text for vocabulary extraction.
         </li>
         <li>
           <strong>Enter text</strong> on the <em>Content</em> tab →
@@ -56,19 +56,18 @@
         </li>
         <li>
           <strong>Pick a photo</strong> on the <em>Content</em> tab →
-          "+" → "Choose Image". Fully on-device text recognition
-          extracts the text from the image — the image itself does
-          not leave your device.
+          "+" → "Choose Image". Anyvoc reads the text out of the
+          image — the image itself does not leave your device.
         </li>
       </ol>
 
       <h3>Why does vocabulary extraction take 10–30 seconds?</h3>
       <p>
-        The app sends the text to our AI provider, which generates
-        vocabulary, translations, and example sentences. Longer texts
-        are processed in chunks, so a whole article can take 30
-        seconds — the app shows a rotating status hint of what's
-        happening.
+        Anyvoc has an AI model analyse the text to generate
+        vocabulary, translations, and example sentences. Longer
+        passages take longer — for a whole article, expect up to
+        half a minute. The app shows a rotating status hint while
+        it works.
       </p>
 
       <h3>Which images work with OCR?</h3>
@@ -82,10 +81,12 @@
 
       <h3>Is my content stored or used for AI training?</h3>
       <p>
-        No. We don't store any of your content server-side — see the
-        <a href="privacy.html">privacy policy</a> for the full list
-        of processors. Per their API terms of use, they do
-        <strong>not</strong> use your content for model training.
+        No. We don't store any of your content server-side. The AI
+        provider Anyvoc uses for vocabulary extraction does
+        <strong>not</strong> use submitted content for model
+        training, per its API terms. The full processor list and
+        legal basis for each step is in the
+        <a href="../legal/privacy.html">privacy policy</a>.
       </p>
 
       <hr />
@@ -197,7 +198,7 @@
         learning-language word read by your device's text-to-speech
         engine. Voice quality + accent depend on your OS — Anyvoc
         does not bundle its own voices. Available to every tier
-        (Free / Guest / Pro).
+        (Guest / Basic / Pro).
       </p>
       <p>
         For nine languages — Portuguese, Spanish, English, French,
@@ -213,19 +214,17 @@
 
       <h3>Why are some words missing in puzzle mode?</h3>
       <p>
-        Puzzle mode skips vocabulary whose answer is longer than 16
-        characters. The letter-tile grid is sized to fit 8 tiles per
-        row, so the 16-character cap keeps every word at most 2 rows
-        — anything longer would shrink the tiles below a comfortable
-        tap target. The skipped cards are still trained normally in
-        flashcard and typing mode; they only sit out for the puzzle
-        round.
+        Puzzle mode is best suited to shorter answers — very long
+        words sit out of the puzzle round so the letter tiles stay
+        a comfortable tap-target size. Those words are still
+        trained normally in flashcard and typing mode; they just
+        don't appear in puzzle rounds.
       </p>
       <p>
-        If you turn on puzzle mode and find that every card on the
-        device exceeds the cap, the trainer shows a dedicated
-        empty-state hint pointing back to <em>Settings → Quiz
-        mode</em> rather than running an empty round.
+        If every card on the device is too long for puzzle mode,
+        the trainer shows a hint pointing back to
+        <em>Settings → Quiz mode</em> rather than running an
+        empty round.
       </p>
 
       <h3>How does random mode decide which mode to use?</h3>
@@ -236,9 +235,9 @@
         per card. Tap <em>Start</em> again for a new draw.
       </p>
       <p>
-        If no card on the device fits puzzle mode (every answer is
-        longer than 16 characters), puzzle is left out of the draw
-        for that round. So you'll never land in an empty round just
+        If no card on the device fits puzzle mode (e.g. every
+        answer is too long), puzzle is left out of the draw for
+        that round. So you'll never land in an empty round just
         because the random pick happened to be puzzle.
       </p>
 
@@ -255,11 +254,11 @@
         selection and the words reappear immediately.
       </p>
       <p>
-        <strong>Free</strong> users pick exactly one level at a time;
-        <strong>Pro</strong> users can select several levels in
-        parallel — useful when you're transitioning between levels
-        (e.g. B1 + B2 together) or want to review a wider span at
-        once.
+        <strong>Basic</strong> users pick exactly one level at a
+        time; <strong>Pro</strong> users can select several levels
+        in parallel — useful when you're transitioning between
+        levels (e.g. B1 + B2 together) or want to review a wider
+        span at once.
       </p>
       <p>
         <strong>Exception:</strong> vocabulary you've added yourself
@@ -270,13 +269,13 @@
 
       <h3>How reliable is the CEFR classification?</h3>
       <p>
-        Anyvoc computes the level locally and deterministically on
-        device, so the same word always lands at the same level for
-        the same language. Accuracy benchmarks at roughly 30 % exact
-        match and 70 % within ±1 level — on par with general-purpose
-        AI models. The learning takeaway: B1-classified words are
-        reasonable for B1 learners; the model rarely lands two levels
-        off.
+        Anyvoc assigns each word a single CEFR level per language,
+        consistently — the same word always lands in the same
+        bucket. It's accurate enough that B1-tagged words are a
+        reasonable fit for B1 learners; the level is rarely more
+        than one band off. Treat it as a strong default rather
+        than a final judgement — adjust your CEFR filter if a
+        whole batch feels off-level.
       </p>
 
       <hr />
@@ -285,11 +284,11 @@
 
       <h3>Can I learn multiple languages in parallel?</h3>
       <p>
-        Yes — but it's a Pro feature. In Free mode you can switch
+        Yes — but it's a Pro feature. On Basic you can switch
         learning languages at any time, but you only keep the
         vocabulary of the most recently active language. Pro
-        subscribers hold vocabulary and learning history in any number
-        of languages simultaneously.
+        subscribers hold vocabulary and learning history in any
+        number of languages simultaneously.
       </p>
 
       <h3>What happens if I cancel Pro and have vocabulary in multiple languages?</h3>
@@ -391,9 +390,9 @@
 
       <h3>Where is my vocabulary stored?</h3>
       <p>
-        Locally on your device, in a SQLite database. There is no
-        cloud sync. When you switch to a new device you lose your
-        vocabulary collection — export a backup first
+        Locally on your device. There is no cloud sync. When you
+        switch to a new device you lose your vocabulary collection
+        — export a backup first
         (<em>Settings → Create / Restore Backup</em>, Pro feature).
       </p>
 
@@ -454,12 +453,86 @@
         No. Anyvoc uses no ads, no trackers, no analytics SDKs. The
         only external connections are sign-in and AI processing —
         both purely functional and described in the
-        <a href="privacy.html">privacy policy</a>.
+        <a href="../legal/privacy.html">privacy policy</a>.
       </p>
 
       <hr />
 
       <h2>Payment and Pro</h2>
+
+      <h3>What's the difference between Basic and Pro?</h3>
+      <p>
+        Anyvoc has two tiers. <strong>Basic</strong> is free,
+        indefinite, and a full product on its own. <strong>Pro</strong>
+        adds the features that lift the natural one-language /
+        one-level ceiling, plus higher daily limits.
+      </p>
+      <ul>
+        <li>
+          <strong>Languages:</strong> Basic = one learning language
+          at a time; Pro = any number in parallel.
+        </li>
+        <li>
+          <strong>CEFR levels:</strong> Basic = one level at a
+          time; Pro = several levels at once (e.g. B1 + B2).
+        </li>
+        <li>
+          <strong>Save from original text:</strong> long-press a
+          word or multi-word phrase in the source to add it as a
+          vocab — Pro only.
+        </li>
+        <li>
+          <strong>Full-text translation</strong> next to the
+          original — Pro only.
+        </li>
+        <li>
+          <strong>Backup / restore</strong> your full collection
+          as a portable file — Pro only.
+        </li>
+        <li>
+          <strong>Higher limits</strong> on the length of a single
+          piece of content and the number of content adds per day
+          — Pro only.
+        </li>
+        <li>
+          Everything else — the trainer, all four modes, the five
+          Leitner boxes, text-to-speech, CSV / spreadsheet import,
+          the streak, the daily learning goal — is on every tier,
+          Guest included.
+        </li>
+      </ul>
+
+      <h3>Why does Pro cost money?</h3>
+      <p>
+        Two reasons.
+      </p>
+      <p>
+        <strong>1. Language AI is not free for us.</strong> Every
+        time Anyvoc turns an article, a photo of a page, or a
+        note into a vocabulary deck, an AI model runs the
+        analysis — and we get billed per request. One enthusiastic
+        Pro user can comfortably generate dozens of those a day;
+        multiplied across the user base it adds up to a real
+        invoice every month. Pro subscriptions cover that
+        invoice, and let us pick stronger models for paying users
+        instead of rationing access.
+      </p>
+      <p>
+        <strong>2. Anyvoc is a deliberately small project.</strong>
+        No growth team, no ad budget, no investors. The
+        economics have to work on a modest scale, which means
+        subscription revenue from people who find the app useful
+        — not ads, data sales, or hidden up-sells. Our part of
+        the deal is to keep the operation lean and the price
+        where it is. Yours, if Anyvoc helps you learn, is to
+        consider going Pro.
+      </p>
+      <p>
+        Basic stays free forever and is meant as a real product,
+        not a crippled demo. Many learners can stick with one
+        language at one level and never bump into a limit. Pro is
+        for when you want more than that.
+      </p>
 
       <h3>What does Pro cost?</h3>
       <p>Currently:</p>
