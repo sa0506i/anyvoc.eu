@@ -24,7 +24,7 @@
     <article class="legal">
       <a href="../" class="back-link">← Home</a>
       <h1>Anyvoc — FAQ</h1>
-      <p class="lead">Last updated: 2026-05-15.</p>
+      <p class="lead">Last updated: 2026-06-19.</p>
 
       <p>
         This FAQ covers the most common questions about Anyvoc. If you
@@ -74,8 +74,10 @@
           tab → "+" → "Record Audio". Speak in your learning
           language; Anyvoc transcribes what you say into the
           editable text area, where you can clean it up before
-          saving. Recording stops automatically when the
-          transcript reaches the length limit of your tier.
+          saving. Recording stops automatically after a short
+          pause in your speech — or whenever you tap stop. The
+          transcript is trimmed to the standard length limit
+          (the same on every tier) when you save.
         </li>
       </ol>
 
@@ -122,12 +124,13 @@
 
       <h2>Trainer and Leitner system</h2>
 
-      <h3>What are the five boxes in the trainer?</h3>
+      <h3>How do the Leitner boxes in the trainer work?</h3>
       <p>
         Anyvoc uses the Leitner system: each vocabulary item sits in
-        one of five boxes; the further along, the less often you'll be
-        prompted to review it. Answer correctly and the item moves up
-        a box; answer incorrectly and it falls back to box 1.
+        one of five timed review boxes; the further along, the less
+        often you'll be prompted to review it. Answer correctly and the
+        item moves up a box; answer incorrectly and it falls back to
+        box 1.
       </p>
       <p>Review intervals:</p>
       <table>
@@ -140,8 +143,15 @@
           <tr><td>3</td><td>every 4 days</td></tr>
           <tr><td>4</td><td>every 8 days</td></tr>
           <tr><td>5</td><td>every 16 days</td></tr>
+          <tr><td>Mastered</td><td>graduated — no scheduled review</td></tr>
         </tbody>
       </table>
+      <p>
+        Answer a word correctly while it's in box 5 and it graduates to
+        a final <strong>Mastered</strong> box. Mastered words leave the
+        review schedule entirely — you won't be prompted on them again,
+        so the trainer can keep focusing on what you're still learning.
+      </p>
 
       <h3>What do "Missed" and "Got it" mean in the trainer?</h3>
       <ul>
@@ -185,6 +195,11 @@
         Vocabulary tab filtered to that subset — useful for previewing
         what a session will actually present.
       </p>
+      <p>
+        The total number of cards surfaced as due on any single day is
+        also capped: if a large backlog comes due at once, it's spread
+        across several days rather than dumped on you in one sitting.
+      </p>
 
       <h3>What's the streak in the trainer stats?</h3>
       <p>
@@ -195,7 +210,7 @@
         two separate streaks.
       </p>
 
-      <h3>Flashcard, typing, puzzle, or random — which is better?</h3>
+      <h3>Flashcard, typing, puzzle, or multiple choice — which is better?</h3>
       <p>All four have their use:</p>
       <ul>
         <li>
@@ -214,9 +229,10 @@
           word without forcing free recall on a keyboard.
         </li>
         <li>
-          <strong>Random</strong> picks one of the three above at the
-          start of every round. Mixes the modes so you don't fall
-          into a single-mode rut.
+          <strong>Multiple choice</strong> asks you to pick the
+          correct translation from several options. Lightest cognitive
+          load — good for a first pass over fresh vocabulary or for
+          training on the go.
         </li>
       </ul>
       <p>Switch in <em>Settings → Quiz mode</em>.</p>
@@ -246,8 +262,8 @@
         Puzzle mode is best suited to shorter answers — very long
         words sit out of the puzzle round so the letter tiles stay
         a comfortable tap-target size. Those words are still
-        trained normally in flashcard and typing mode; they just
-        don't appear in puzzle rounds.
+        trained normally in the other modes; they just don't
+        appear in puzzle rounds.
       </p>
       <p>
         If every card on the device is too long for puzzle mode,
@@ -256,19 +272,53 @@
         empty round.
       </p>
 
-      <h3>How does random mode decide which mode to use?</h3>
+      <h3>Can I mix quiz modes?</h3>
       <p>
-        Random picks one of <em>flashcard</em>, <em>typing</em>, or
-        <em>puzzle</em> when you tap <em>Start training</em>. The
-        chosen mode then runs the entire round — it doesn't switch
-        per card. Tap <em>Start</em> again for a new draw.
+        Yes. In the quiz-mode settings you enable one or more modes.
+        Pick a single mode and every card uses it. Enable several and
+        each card draws one of them at random — so the mode varies
+        <strong>card to card</strong> within a round, keeping you out
+        of a single-mode rut.
       </p>
       <p>
-        If no card on the device fits puzzle mode (e.g. every
-        answer is too long), puzzle is left out of the draw for
-        that round. So you'll never land in an empty round just
-        because the random pick happened to be puzzle.
+        If no card on the device fits puzzle mode (e.g. every answer is
+        too long), puzzle is left out of the draw for that round — so
+        you'll never land in an empty round just because the random
+        pick happened to be puzzle.
       </p>
+
+      <h3>What is listening practice?</h3>
+      <p>
+        The trainer has a separate <strong>Listening</strong> category
+        that trains you by ear: instead of showing the word, Anyvoc
+        speaks it aloud and you answer with the listening version of
+        flashcard, typing, puzzle, or multiple choice. It uses your
+        device's text-to-speech voice, so it works on every tier
+        (Guest / Basic / Pro).
+      </p>
+      <p>
+        Listening is one of three trainer categories you switch between
+        in the trainer settings — the others are the regular vocabulary
+        trainer ("Classic") and the Matching game below. Each round
+        trains exactly one category.
+      </p>
+
+      <h3>What is the Matching game?</h3>
+      <p>
+        Matching is a tap-to-link board: a column of words and a column
+        of translations, which you pair up by tapping. It's a quick,
+        low-pressure way to refresh a batch of vocabulary, and is
+        available on every tier.
+      </p>
+
+      <h3>What progress can I see?</h3>
+      <p>Beyond the daily streak, the trainer stats show:</p>
+      <ul>
+        <li><strong>Best streak</strong> — your longest run of consecutive training days.</li>
+        <li><strong>Review calendar</strong> — a day-by-day grid of when you trained.</li>
+        <li><strong>Tough words</strong> — the items you've missed most often, so you can give them extra attention.</li>
+        <li><strong>Overall progress</strong> — how much of your vocabulary has reached the higher Leitner boxes.</li>
+      </ul>
 
       <hr />
 
@@ -288,6 +338,11 @@
         in parallel — useful when you're transitioning between
         levels (e.g. B1 + B2 together) or want to review a wider
         span at once.
+      </p>
+      <p>
+        The level chips show five buckets — A1, A2, B1, B2, and
+        <strong>C</strong>. The top bucket merges C1 and C2 into a
+        single "C", so advanced vocabulary all lands there.
       </p>
       <p>
         <strong>Exception:</strong> vocabulary you've added yourself
@@ -335,13 +390,25 @@
       </p>
 
       <h3>I'm only learning one language — does Pro give me anything?</h3>
-      <p>Four visible benefits even in a single-language setup:</p>
+      <p>Several visible benefits even in a single-language setup:</p>
       <ul>
         <li>
           <strong>Tap-to-save</strong>: long-press a word in the
           original text to add it as a single vocab — including
           multi-word phrases like <em>"prateleira de bagagem"</em>
           or <em>"kein Bock haben"</em>.
+        </li>
+        <li>
+          <strong>Inline word editing</strong>: fix or refine a
+          card's word and its translation directly, without
+          re-extracting.
+        </li>
+        <li>
+          <strong>Native-language content</strong>: paste or share
+          text in your own language and Anyvoc first translates it
+          into your learning language, then builds vocabulary from
+          that — handy when the source you want to learn from isn't
+          in the target language yet.
         </li>
         <li>
           <strong>Full-text translation</strong> of the original
@@ -354,8 +421,8 @@
           want a wider review span.
         </li>
         <li>
-          <strong>Higher limits</strong>: longer texts and no daily
-          content-add limit.
+          <strong>No daily cap on new vocabulary</strong>: Basic adds
+          up to 30 new words a day; Pro is unlimited.
         </li>
       </ul>
 
@@ -364,6 +431,15 @@
         Anyvoc supports 12 learning languages: English, German, French,
         Spanish, Italian, Portuguese, Dutch, Swedish, Norwegian, Danish,
         Polish, Czech.
+      </p>
+
+      <h3>What language is the app's interface in?</h3>
+      <p>
+        Anyvoc's interface is available in five languages — English,
+        German, Spanish, French, and Italian — and follows your device
+        language where it's supported, otherwise English. That's
+        separate from the 12 <em>learning</em> languages above: you can,
+        for example, run the app in English while learning Czech.
       </p>
 
       <hr />
@@ -475,10 +551,11 @@
 
       <h3>What happens when I'm offline?</h3>
       <p>
-        Trainer, vocabulary list, streak, and Leitner reviews work
-        fully offline. What does <strong>not</strong> work offline:
-        adding new content via LLM extraction (needs internet) and
-        sign-in.
+        The trainer works fully offline — all quiz modes, listening
+        practice, the matching game, your vocabulary list, the streak,
+        and Leitner reviews. What does <strong>not</strong> work
+        offline: adding new content via AI extraction (needs internet)
+        and sign-in.
       </p>
 
       <h3>Does Anyvoc send ad-tracking or analytics?</h3>
@@ -498,7 +575,7 @@
         Anyvoc has two tiers. <strong>Basic</strong> is free,
         indefinite, and a full product on its own. <strong>Pro</strong>
         adds the features that lift the natural one-language /
-        one-level ceiling, plus higher daily limits.
+        one-level ceiling, plus a higher daily vocabulary allowance.
       </p>
       <ul>
         <li>
@@ -515,19 +592,30 @@
           vocab — Pro only.
         </li>
         <li>
+          <strong>Inline word editing:</strong> edit a card's word
+          and translation directly — Pro only.
+        </li>
+        <li>
+          <strong>Native-language content:</strong> paste text in
+          your own language and have Anyvoc translate it into your
+          learning language before extracting vocabulary — Pro only.
+        </li>
+        <li>
           <strong>Full-text translation</strong> next to the
           original — Pro only.
         </li>
         <li>
-          <strong>Higher limits</strong> on the length of a single
-          piece of content and the number of content adds per day
-          — Pro only.
+          <strong>Daily new-vocabulary cap:</strong> Basic adds up to
+          30 new words a day; Pro is unlimited. (The length limit on a
+          single piece of content is the same on both tiers.)
         </li>
         <li>
-          Everything else — the trainer, all four modes, the five
-          Leitner boxes, text-to-speech, CSV / spreadsheet import,
-          backup &amp; restore, the streak, the daily learning
-          goal — is on every tier, Guest included.
+          Everything else — the trainer and all its quiz modes
+          (flashcard, typing, puzzle, multiple choice), listening
+          practice, the matching game, the Leitner boxes,
+          text-to-speech, CSV / spreadsheet import, backup &amp;
+          restore, the streak, the daily learning goal — is on every
+          tier, Guest included.
         </li>
       </ul>
 
