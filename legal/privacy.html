@@ -27,7 +27,7 @@
     <article class="legal">
       <a href="../" class="back-link">← Home</a>
       <h1>Privacy Policy</h1>
-      <p class="lead">Last updated: 2026-05-15.</p>
+      <p class="lead">Last updated: 2026-07-23.</p>
 
       <p>
         This privacy policy explains which personal data the
@@ -240,7 +240,7 @@
         use only manual vocabulary entry.
       </p>
 
-      <h2>7. On-device OCR</h2>
+      <h2>7. On-device text recognition (OCR) and speech-to-text</h2>
       <p>
         Images you hand to the app via the photo library or camera are
         processed <strong>on-device</strong> with Google ML Kit Text
@@ -270,6 +270,19 @@
         Mountain View, USA; transfer based on the EU-US Data Privacy
         Framework and Standard Contractual Clauses.
       </p>
+      <p>
+        <strong>Speech-to-text (voice input):</strong> If you use the
+        optional voice-input feature to dictate vocabulary source text,
+        the audio is transcribed <strong>on your device</strong> using
+        the operating system's offline speech recogniser. The recording
+        is <strong>not</strong> streamed to Google, Apple, or any other
+        server. Only the resulting text remains on your device — and is
+        forwarded for vocabulary extraction only if you then choose to
+        (see section 6). If your device has no offline speech model
+        installed for the selected language, voice input reports an
+        error rather than falling back to a cloud recogniser, so audio
+        never leaves the device.
+      </p>
 
       <h2>8. Permissions the app requests</h2>
       <table>
@@ -280,7 +293,7 @@
           <tr><td>Internet</td><td>Backend requests to anyvoc-backend.fly.dev and Supabase</td></tr>
           <tr><td>Camera</td><td>Optional, to photograph vocabulary source texts (OCR)</td></tr>
           <tr><td>Photo library (iOS)</td><td>Optional, to pick text-bearing images from the gallery</td></tr>
-          <tr><td>Audio recording</td><td>Reserved for future speech features — currently unused</td></tr>
+          <tr><td>Audio recording</td><td>Optional, for on-device speech-to-text vocabulary input — audio is processed on your device and never sent to a server</td></tr>
         </tbody>
       </table>
       <p>
