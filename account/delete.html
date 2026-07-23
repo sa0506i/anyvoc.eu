@@ -96,14 +96,35 @@
 
       <h2>4. What is retained, and why</h2>
       <p>
-        We do not retain personal data linked to your account after
-        deletion. Anonymous, non-identifying request logs at our LLM
-        backend proxy (timestamp, model, provider — no IP, no user
-        ID, no content) may persist for a short retention window for
-        security and operational integrity. These logs are not linked
-        to your account and cannot be retroactively associated with
-        you. Details: see the
-        <a href="../legal/privacy.html">privacy policy</a>.
+        After deletion we retain <strong>no personal data linked to
+        your account</strong>. Two kinds of non-identifying log data
+        exist independently of your account and are therefore
+        unaffected by — and cannot be traced back to — a deletion:
+      </p>
+      <ul>
+        <li>
+          <strong>Our LLM backend proxy</strong> writes one structured
+          log entry per request containing only the fields
+          <code>at</code>, <code>tier</code>, <code>model</code>, and
+          <code>provider</code> — no content, no IP address, no user
+          ID, no headers. These entries carry nothing that could be
+          linked to your account or device, so there is no
+          account-specific data in them to delete or retain.
+        </li>
+        <li>
+          <strong>Host-level technical logs</strong> (IP address,
+          timestamp, HTTP status) are produced by our hosting
+          providers, as is normal for any web service. These are
+          deleted automatically according to each host's own retention
+          policy; the period is set by the host, not by us, and we
+          neither download nor analyse these logs.
+        </li>
+      </ul>
+      <p>
+        Which processor stores what, and on what legal basis, is set
+        out in full in the
+        <a href="../legal/privacy.html">privacy policy</a>
+        (sections 5–7).
       </p>
 
       <h2>5. Swiss residents (FADP)</h2>
@@ -123,7 +144,7 @@
         <a href="../legal/privacy.html">privacy policy</a>.
       </p>
 
-      <p class="lead">Last updated: 2026-05-05.</p>
+      <p class="lead">Last updated: 2026-07-23.</p>
     </article>
 
     <footer>
