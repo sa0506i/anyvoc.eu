@@ -43,7 +43,7 @@ What does **not** require a date bump:
 | `legal/privacy.html`          | top, after `<h1>`           |
 | `legal/terms.html`            | top, after `<h1>`           |
 | `legal/imprint.html`          | bottom, before `</article>` |
-| `account/delete.html`         | top, after `<h1>` (if present) |
+| `account/delete.html`         | bottom, before `</article>` |
 
 ### Date format
 
