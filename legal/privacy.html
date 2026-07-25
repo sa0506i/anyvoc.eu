@@ -27,7 +27,7 @@
     <article class="legal">
       <a href="../" class="back-link">← Home</a>
       <h1>Privacy Policy</h1>
-      <p class="lead">Last updated: 2026-07-24.</p>
+      <p class="lead">Last updated: 2026-07-25.</p>
 
       <p>
         This privacy policy explains which personal data the
@@ -92,15 +92,27 @@
         your vocabulary data, and no analysis of your learning content
         on our side.
       </p>
-      <p>The only external connections the app makes are:</p>
+      <p>The app's external connections are limited to:</p>
       <ul>
-        <li>An optional sign-in backend (Supabase), see section 5.</li>
+        <li>
+          An optional sign-in backend (Supabase) and — if you choose
+          those sign-in methods — the Apple or Google sign-in
+          services, see section 5.
+        </li>
         <li>An LLM backend for vocabulary extraction and translation, see section 6.</li>
+        <li>
+          When you add a web link: a direct fetch of that page by
+          your device, see section 6.
+        </li>
+        <li>
+          Anonymous diagnostic signals of the on-device
+          text-recognition component, see section 7.
+        </li>
       </ul>
       <p>
         If you use the app in guest mode and don't submit any content
-        for vocabulary extraction, <strong>no</strong> personal data is
-        transferred to external services.
+        or links for vocabulary extraction, <strong>no</strong>
+        personal data is transferred to external services.
       </p>
 
       <h2>4. Local storage on your device</h2>
@@ -116,7 +128,15 @@
         <li>Pro status flag (local, until in-app purchase activation)</li>
         <li>Anonymous counter for guest-login budget (<code>guest_login_remaining</code>)</li>
       </ul>
-      <p>This data does not leave your device. It is deleted when you:</p>
+      <p>
+        This data is stored only on your device. Parts of it leave the
+        device in exactly two user-triggered cases: the text of content
+        you submit for extraction or translation is transmitted
+        transiently to the LLM backend (section 6), and the backup
+        feature exports your vocabulary database as a file whose
+        destination you choose yourself in your device's share dialog —
+        the app itself uploads nothing. The data is deleted when you:
+      </p>
       <ul>
         <li>uninstall the app, or</li>
         <li>
@@ -142,7 +162,12 @@
       </ul>
       <p>The following data is sent to Supabase during sign-in:</p>
       <ul>
-        <li>For email OTP: your email address + 6-digit verification code.</li>
+        <li>
+          For email OTP: your email address + 6-digit verification
+          code. Entered codes — including failed attempts — are
+          verified server-side at Supabase and are not stored beyond
+          the verification.
+        </li>
         <li>
           For "Sign in with Apple" (iOS): the Apple-issued identity
           token. Apple may generate a pseudonymous email
@@ -167,8 +192,12 @@
       <p>
         <strong>Processor:</strong> Supabase Inc., hosted in the EU
         Frankfurt region (eu-central-1, AWS Frankfurt). A data
-        processing agreement under Art. 28 GDPR is in place; data
-        transfer takes place exclusively within the EU.
+        processing agreement under Art. 28 GDPR is in place.
+        Application data is stored and processed in the EU; Supabase
+        Inc. is a US company, and any residual access from outside the
+        EU (e.g. for support or platform administration) is covered by
+        the EU Standard Contractual Clauses (Art. 46 (2) (c) GDPR)
+        under that agreement.
       </p>
       <p>
         <strong>Legal basis:</strong> Art. 6 (1) (b) GDPR (performance
@@ -177,8 +206,11 @@
       </p>
       <p>
         <strong>Deletion:</strong> You can delete your account at any
-        time in the app under <em>Settings → Delete Account</em>. All
-        account data at Supabase is then irrevocably deleted. Local
+        time in the app under <em>Settings → Delete Account</em>. The
+        account record at Supabase is then deleted immediately and
+        irrevocably; residual copies in the processor's routine
+        database backups and authentication logs expire automatically
+        within the processor's standard retention window. Local
         vocabulary data is removed from the device in the same step.
         If you cannot reach the in-app flow, you can also
         <a href="../account/delete.html">request account deletion via the web</a>.
@@ -191,6 +223,16 @@
         relevant text content to our backend proxy
         <code>anyvoc-backend.fly.dev</code>. The proxy forwards the
         request to an LLM provider.
+      </p>
+      <p>
+        <strong>Web links:</strong> When you add or share a link, your
+        device fetches that page <strong>directly</strong> — the target
+        website therefore sees your IP address and the usual request
+        metadata, exactly as if you had opened the page in a browser.
+        The readable article text is normally extracted locally on
+        your device. Only if that local extraction fails is the
+        fetched page content (capped in size) sent to our backend
+        proxy so the LLM can extract the article text instead.
       </p>
       <p>
         <strong>What data:</strong> The text of the content to be
@@ -206,9 +248,11 @@
         <code>tier</code>, <code>model</code>, <code>provider</code>.
         <strong>No</strong> content data, <strong>no</strong> IP
         address, <strong>no</strong> user ID, <strong>no</strong>
-        headers. These logs serve solely error- and cost-analysis and
-        are not stored in a way that could be linked to your account
-        or device.
+        headers. On upstream errors, the LLM provider's error message
+        is additionally logged for debugging — never the submitted
+        text itself. These logs serve solely error- and cost-analysis
+        and are not stored in a way that could be linked to your
+        account or device.
       </p>
       <p>
         <strong>Backend hosting processor:</strong> Fly.io, Inc., USA.
@@ -223,11 +267,12 @@
       <p>
         <strong>Mistral AI</strong>, Paris, France (EU). Mistral
         (currently <code>mistral-small-latest</code>) processes the
-        submitted content to generate the AI response and acknowledges
-        retaining requests for a limited period for abuse detection
-        (see Mistral's privacy policy at mistral.ai). Mistral, per its
-        API terms, does <strong>not</strong> use the data for model
-        training.
+        submitted content to generate the AI response and retains API
+        requests for abuse detection for <strong>30 rolling
+        days</strong> per its published data-retention policy (see
+        Mistral's privacy documentation at mistral.ai). Mistral, per
+        its API terms, does <strong>not</strong> use the data for
+        model training.
       </p>
       <p>
         <strong>Third-party transfer:</strong> Although Mistral acts as
@@ -277,9 +322,19 @@
         linked to any user identifier we hold. The processing is
         governed by the
         <a href="https://developers.google.com/ml-kit/terms" rel="noopener">Google ML Kit Terms of Service</a>
-        and Google's privacy documentation. Processor: Google LLC,
-        Mountain View, USA; transfer based on the EU-US Data Privacy
-        Framework and Standard Contractual Clauses.
+        and Google's privacy documentation. These signals are
+        processed by Google LLC, Mountain View, USA, acting as an
+        independent controller for its own SDK quality purposes;
+        transfer based on the EU-US Data Privacy Framework and
+        Standard Contractual Clauses.
+      </p>
+      <p>
+        <strong>Legal basis</strong> for using the SDK despite these
+        diagnostics: Art. 6 (1) (f) GDPR — our legitimate interest in
+        providing a functioning, quality-assured on-device text
+        recognition without sending your images to any server. You can
+        object to processing based on legitimate interest at any time
+        (see section 12).
       </p>
       <p>
         <strong>Speech-to-text (voice input):</strong> If you use the
@@ -343,8 +398,17 @@
         Neither the app nor the website anyvoc.eu sets any cookies of
         their own, uses tracking pixels, ad networks, or analytics
         SDKs. The website is fully static; no consent banner is
-        required because no non-essential storage access takes place
-        on the visitor's device (TTDSG § 25).
+        required because no non-essential storage of or access to
+        information on the visitor's device takes place (§ 25 TDDDG
+        in Germany — formerly TTDSG; regulation 6 PECR in the UK; and
+        the corresponding ePrivacy rules elsewhere in the EEA).
+      </p>
+      <p>
+        The same holds inside the app: everything the app stores on
+        your device (the local vocabulary database, sign-in session
+        tokens, the guest-session counter) is strictly necessary for
+        the service you explicitly request and therefore requires no
+        consent (§ 25 (2) no. 2 TDDDG and its equivalents).
       </p>
 
       <h2>12. Your rights under GDPR</h2>
@@ -360,6 +424,27 @@
       <p>
         Where processing is based on consent, you can withdraw it at
         any time.
+      </p>
+      <blockquote>
+        <p>
+          <strong>Right to object (Art. 21 GDPR):</strong> where we
+          base processing on legitimate interest (website server logs,
+          section 2; SDK diagnostics, section 7), you have the right
+          to object at any time, on grounds relating to your
+          particular situation, to that processing. To object, email
+          <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a>.
+        </p>
+      </blockquote>
+      <p>
+        Anyvoc performs <strong>no</strong> automated decision-making
+        producing legal or similarly significant effects within the
+        meaning of Art. 22 GDPR, and no profiling.
+      </p>
+      <p>
+        Providing personal data is never a statutory requirement.
+        Providing an email address is required only if you create an
+        account — it is the contractual identifier for sign-in; in
+        guest mode no personal data needs to be provided at all.
       </p>
       <p>
         Please direct such requests to
@@ -398,8 +483,8 @@
       <h2>14. UK residents (UK GDPR / Data Protection Act 2018)</h2>
       <p>
         If you reside in the United Kingdom, the UK GDPR
-        (retained Regulation (EU) 2016/679 as it forms part of
-        UK domestic law) and the Data Protection Act 2018 apply.
+        (Regulation (EU) 2016/679 as it forms part of UK domestic
+        law) and the Data Protection Act 2018 apply.
         The rights granted under the UK GDPR mirror those listed
         in section 12; you may exercise them via the same email
         channel:
@@ -415,14 +500,18 @@
         <a href="https://ico.org.uk/" rel="noopener">https://ico.org.uk/</a>
       </blockquote>
       <p>
-        Cross-border transfers from the UK to the EU rely on the
-        UK Government's adequacy decision in respect of the EU /
-        EEA. Where data is transferred onward from the EU to a
-        third country (e.g. USA, for GitHub Pages hosting of this
-        website), the same Standard Contractual Clauses and Data
-        Privacy Framework certifications named in sections 2, 5,
-        6 and 7 apply, supplemented by the UK International Data
-        Transfer Addendum / UK SCCs where required.
+        For UK users, cross-border data flows rely on the following
+        mechanisms: (a) transfers to the EU / EEA (sign-in backend,
+        section 5; LLM processing, section 6) rely on the UK adequacy
+        regulations in respect of the EU / EEA; (b) transfers to
+        recipients in the USA (GitHub, Inc. for hosting of this
+        website, section 2; Google LLC for SDK diagnostics, section 7)
+        rely on the recipients' certification under the <strong>UK
+        Extension to the EU-US Data Privacy Framework</strong> (in
+        force since 12 October 2023); and (c) where a US recipient is
+        not certified under the UK Extension, on the <strong>UK
+        International Data Transfer Addendum</strong> to the EU
+        Standard Contractual Clauses.
       </p>
 
       <h2>15. Swiss residents (FADP)</h2>
@@ -438,13 +527,27 @@
         <li>Right to information about the data processed (Art. 25 FADP)</li>
         <li>Right to have inaccurate data corrected (Art. 32 (1) FADP)</li>
         <li>Right to have your data erased (Art. 32 (2) FADP)</li>
-        <li>Right to object to processing (Art. 30 FADP)</li>
+        <li>Right to oppose processing carried out against your express wish (Art. 30 (2) (b) FADP)</li>
         <li>Right to data portability (Art. 28 FADP)</li>
       </ul>
       <p>
         You can exercise these rights via the same email channel as
         for GDPR requests:
         <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a>.
+      </p>
+      <p>
+        <strong>Cross-border disclosure (Art. 16–17 FADP):</strong>
+        where your data is disclosed abroad, this happens to France
+        and other EU / EEA states (LLM processing, section 6; sign-in
+        backend, section 5) — states the Swiss Federal Council
+        recognises as providing adequate protection — and to the USA
+        (hosting of this website, section 2; SDK diagnostics,
+        section 7). Disclosures to the USA rely on the recipient's
+        certification under the <strong>Swiss-U.S. Data Privacy
+        Framework</strong> (adequacy decision in force since
+        15 September 2024) or, where a recipient is not so certified,
+        on the EU Standard Contractual Clauses with the adaptations
+        for Swiss law recognised by the FDPIC.
       </p>
       <p>
         The competent Swiss supervisory authority is:
@@ -457,7 +560,49 @@
         <a href="https://www.edoeb.admin.ch/" rel="noopener">https://www.edoeb.admin.ch/</a>
       </blockquote>
 
-      <h2>16. Changes to this privacy policy</h2>
+      <h2>16. Contact by email</h2>
+      <p>
+        When you email us (support, feedback, account deletion, or
+        other data-subject requests), we process your email address
+        and the content of your message in order to handle the
+        request. <strong>Legal basis:</strong> Art. 6 (1) (b) GDPR
+        where the request concerns your account or contract,
+        Art. 6 (1) (c) for data-subject rights we are legally obliged
+        to handle, otherwise Art. 6 (1) (f) (our legitimate interest
+        in answering inquiries). Emails are received and stored by
+        our email hosting provider, which acts as our processor.
+        Correspondence is deleted once the matter is resolved;
+        documentation of data-subject requests is kept for up to
+        three years for accountability purposes (Art. 5 (2) GDPR).
+      </p>
+
+      <h2>17. Children</h2>
+      <p>
+        Anyvoc is not directed at children under 13. Use of the app is
+        permitted from the age of 16, and from 13 with the consent of
+        a legal guardian (see the
+        <a href="terms.html">Terms of Use</a>, section 4). We do not
+        knowingly collect personal data from children under 13 — the
+        only server-side personal data we hold at all is the optional
+        sign-in record described in section 5. If you believe a child
+        has created an account, contact us at
+        <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a>
+        and we will delete it.
+      </p>
+
+      <h2>18. Security</h2>
+      <p>
+        All connections between the app, our backend, and our
+        processors are encrypted in transit (TLS/HTTPS). Sign-in
+        session tokens are stored on your device in the operating
+        system's secure storage (iOS Keychain / Android Keystore). We
+        store no user content server-side. In the event of a personal
+        data breach, we notify the competent supervisory authority
+        and, where required, affected users in accordance with
+        Art. 33 and 34 GDPR.
+      </p>
+
+      <h2>19. Changes to this privacy policy</h2>
       <p>
         We may amend this privacy policy when the app, the processing
         purposes, or the legal framework changes. The current version
