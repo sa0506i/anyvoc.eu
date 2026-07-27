@@ -259,6 +259,33 @@ a:focus-visible {
   margin-bottom: 0.4rem;
 }
 
+/* Chapter index (FAQ). Anchored headings get breathing room above
+   them so the jump target doesn't sit flush against the viewport. */
+.legal .toc {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin: 0 0 2rem;
+}
+
+.legal .toc ol {
+  margin: 0 0 0 1.1rem;
+}
+
+.legal .toc li {
+  margin-bottom: 0.3rem;
+}
+
+.legal .toc li:last-child {
+  margin-bottom: 0;
+}
+
+.legal h2[id],
+.legal h3[id] {
+  scroll-margin-top: 1.5rem;
+}
+
 .legal address {
   font-style: normal;
   background: var(--glass-bg);
