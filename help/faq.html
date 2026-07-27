@@ -38,8 +38,8 @@
         <ol>
           <li><a href="#general">General</a></li>
           <li><a href="#pro-basic">Pro / Basic</a></li>
-          <li><a href="#content">Content</a></li>
-          <li><a href="#trainer">Trainer</a></li>
+          <li><a href="#content">Adding Content</a></li>
+          <li><a href="#trainer">Learning with the Trainer</a></li>
           <li><a href="#vocabulary">Vocabulary List</a></li>
           <li><a href="#settings">Settings</a></li>
           <li><a href="#troubleshooting">Troubleshooting &amp; contact</a></li>
@@ -50,34 +50,47 @@
 
       <h2 id="general">General</h2>
 
-      <h3>Do I need an account?</h3>
+      <h3>What can Anyvoc do for me?</h3>
       <p>
-        Yes — Anyvoc requires an account for ongoing use. Guest mode
-        is meant for trying the app first: you get three guest
-        sessions to evaluate Anyvoc, after which you sign in to keep
-        using it (email OTP, plus Sign in with Apple on iOS and Sign
-        in with Google on Android). A signed-in account is also
-        required for Pro, since the store validates the purchase
-        against your sign-in.
+        Anyvoc builds a personal vocabulary out of whatever you're
+        already reading. Give it an article, a photo of a book page, a
+        note you typed, or something you say out loud, and it pulls out
+        the words worth learning, translates them, adds an example
+        sentence, and tags each one with a skill level (CEFR). A
+        spaced-repetition trainer then drills them until they stick.
       </p>
-
-      <h3>What is the guest-login budget?</h3>
-      <p>
-        At first launch you have three "guest sessions". Each guest
-        session uses one. Once they're all used, you have to sign in to
-        keep using the app. The limit prevents anyone from using the
-        app indefinitely without any identification.
-      </p>
-
-      <h3>Which sign-in methods are there?</h3>
+      <p>In practice that means:</p>
       <ul>
         <li>
-          <strong>Email with OTP code</strong> — you enter your email,
-          receive a 6-digit code, enter it. No password.
+          <strong>Vocabulary from your own material</strong> — six ways
+          to get text in, including the camera and your voice
+          (<a href="#content">Adding Content</a>).
         </li>
-        <li><strong>Sign in with Apple</strong> — iOS only.</li>
-        <li><strong>Sign in with Google</strong> — Android only.</li>
+        <li>
+          <strong>A trainer that schedules itself</strong> — Leitner
+          boxes decide what's due; four quiz modes, listening practice,
+          and two games keep the drilling from going stale
+          (<a href="#trainer">Learning with the Trainer</a>).
+        </li>
+        <li>
+          <strong>Material at your level</strong> — every word carries a
+          skill level (CEFR), so you can skip the basics you already
+          know and hold back the advanced ones you don't need yet.
+        </li>
+        <li>
+          <strong>12 learning languages</strong>, an interface in five,
+          and everything except adding new content and signing in works
+          offline.
+        </li>
+        <li>
+          <strong>Your vocabulary stays on your device</strong> — no
+          cloud sync, no ads, no trackers, no analytics.
+        </li>
       </ul>
+      <p>
+        Basic is free and stays free. Pro lifts the one-language ceiling
+        and a few other limits — see <a href="#pro-basic">Pro / Basic</a>.
+      </p>
 
       <h3>Which languages does Anyvoc support?</h3>
       <p>
@@ -85,25 +98,40 @@
         Spanish, Italian, Portuguese, Dutch, Swedish, Norwegian, Danish,
         Polish, Czech.
       </p>
-
-      <h3>What language is the app's interface in?</h3>
       <p>
-        Anyvoc's interface is available in five languages — English,
-        German, Spanish, French, and Italian — and follows your device
-        language where it's supported, otherwise English. That's
-        separate from the 12 <em>learning</em> languages above: you can,
-        for example, run the app in English while learning Czech.
+        That list can grow. If the language you want to learn isn't on
+        it, write to
+        <a href="mailto:feedback@anyvoc.eu">feedback@anyvoc.eu</a> and
+        name it — requests are how we decide what gets added next.
       </p>
 
-      <h3>Does Anyvoc come with any starter content?</h3>
+      <h3>What is the CEFR level?</h3>
       <p>
-        Yes. Every new language pair starts with a short sample text
-        already imported, so you can try reading and extraction
-        immediately. And if you pick level A1 during onboarding,
-        Anyvoc offers to import a 250-word basics pack for your
-        learning language.
+        CEFR stands for the <em>Common European Framework of Reference
+        for Languages</em> — the standard scale that schools, textbooks,
+        and language certificates use to describe how far along a
+        learner is. It runs in six bands:
       </p>
-
+      <table>
+        <thead>
+          <tr><th>Level</th><th>Roughly</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A1</td><td>beginner — greetings, numbers, everyday basics</td></tr>
+          <tr><td>A2</td><td>elementary — simple, routine exchanges</td></tr>
+          <tr><td>B1</td><td>intermediate — getting by on familiar topics</td></tr>
+          <tr><td>B2</td><td>upper intermediate — detailed discussion, most everyday texts</td></tr>
+          <tr><td>C1</td><td>advanced — comfortable with demanding material</td></tr>
+          <tr><td>C2</td><td>proficient — near-native command</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Anyvoc tags every word with one of these, which is what lets you
+        aim the app at your own level: extract only vocabulary from B1
+        upwards, say, or hide the C words while you're still working
+        through A2. In the app the six bands show up as five chips —
+        C1 and C2 are merged into a single "C".
+      </p>
       <h3 id="cefr">What do the CEFR level chips above the tab bar do?</h3>
       <p>
         Three tabs carry a row of CEFR level chips, and they don't all
@@ -133,18 +161,13 @@
         every tier.
       </p>
       <p>
-        The chips show five buckets — A1, A2, B1, B2, and
-        <strong>C</strong>. The top bucket merges C1 and C2 into a
-        single "C", so advanced vocabulary all lands there.
-      </p>
-      <p>
         <strong>Exception:</strong> vocabulary you've added yourself —
         long-press save, manual add, or list import — is
-        <strong>always</strong> shown and extracted regardless of the
-        level selection. Your explicit intent beats the filter.
+        <strong>always</strong> extracted regardless of the level
+        selection. Your explicit intent beats the filter.
       </p>
 
-      <h3>How reliable is the CEFR classification?</h3>
+      <h3 id="cefr-reliability">How reliable is the CEFR classification?</h3>
       <p>
         Anyvoc assigns each word a single CEFR level per language,
         consistently — the same word always lands in the same
@@ -153,6 +176,15 @@
         than one band off. Treat it as a strong default rather
         than a final judgement — adjust your CEFR filter if a
         whole batch feels off-level.
+      </p>
+
+      <h3>Does Anyvoc come with any starter content?</h3>
+      <p>
+        Yes. Every new language pair starts with a short sample text
+        already imported, so you can try reading and extraction
+        immediately. And if you pick level A1 during onboarding,
+        Anyvoc offers to import a 250-word basics pack for your
+        learning language.
       </p>
 
       <h3>Where is my vocabulary stored?</h3>
@@ -189,6 +221,35 @@
         when you add a link — your device fetching that page
         directly; all purely functional and described in the
         <a href="../legal/privacy.html">privacy policy</a>.
+      </p>
+
+      <h3>Do I need an account?</h3>
+      <p>
+        Yes — Anyvoc requires an account for ongoing use. Guest mode
+        is meant for trying the app first: you get three guest
+        sessions to evaluate Anyvoc, after which you sign in to keep
+        using it (email OTP, plus Sign in with Apple on iOS and Sign
+        in with Google on Android). A signed-in account is also
+        required for Pro, since the store validates the purchase
+        against your sign-in.
+      </p>
+
+      <h3>Which sign-in methods are there?</h3>
+      <ul>
+        <li>
+          <strong>Email with OTP code</strong> — you enter your email,
+          receive a 6-digit code, enter it. No password.
+        </li>
+        <li><strong>Sign in with Apple</strong> — iOS only.</li>
+        <li><strong>Sign in with Google</strong> — Android only.</li>
+      </ul>
+
+      <h3>What is the guest-login budget?</h3>
+      <p>
+        At first launch you have three "guest sessions". Each guest
+        session uses one. Once they're all used, you have to sign in to
+        keep using the app. The limit prevents anyone from using the
+        app indefinitely without any identification.
       </p>
 
       <hr />
@@ -253,7 +314,7 @@
         the full-text translation next to the original. On top of
         that, Basic's cap of 30 new words a day disappears. If none of
         those sound useful, stay on Basic — it's meant as a real
-        product, not a crippled demo.
+        product.
       </p>
 
       <h3>Can I learn multiple languages in parallel?</h3>
@@ -304,13 +365,6 @@
         where it is. Yours, if Anyvoc helps you learn, is to
         consider going Pro.
       </p>
-      <p>
-        Basic stays free forever and is meant as a real product,
-        not a crippled demo. Many learners can stick with one
-        language at one level and never bump into a limit. Pro is
-        for when you want more than that.
-      </p>
-
       <h3>What does Pro cost?</h3>
       <p>Currently:</p>
       <ul>
@@ -356,7 +410,7 @@
 
       <hr />
 
-      <h2 id="content">Content</h2>
+      <h2 id="content">Adding Content</h2>
 
       <h3>How does new vocabulary material get into Anyvoc?</h3>
       <p>There are six ways:</p>
@@ -450,14 +504,13 @@
         Yes, with Pro: long-press a word in the original text to add
         it as a single vocab — including multi-word phrases like
         <em>"prateleira de bagagem"</em> or <em>"kein Bock haben"</em>.
-        Words saved this way always land in your list, whatever the
-        level chips are set to. See
-        <a href="#basic-vs-pro">Basic vs Pro</a>.
+        Words saved this way are stored whatever the level chips are
+        set to. See <a href="#basic-vs-pro">Basic vs Pro</a>.
       </p>
 
       <hr />
 
-      <h2 id="trainer">Trainer</h2>
+      <h2 id="trainer">Learning with the Trainer</h2>
 
       <h3>How do the Leitner boxes in the trainer work?</h3>
       <p>
@@ -727,8 +780,10 @@
         <li>entries from a <strong>CSV or spreadsheet import</strong></li>
       </ul>
       <p>
-        The last three count as added by you, which is why they show
-        up regardless of the CEFR level selection.
+        The last three count as added by you, so they're stored
+        whatever the level chips are set to. The list's own level
+        filter still applies afterwards — a word can be stored and
+        hidden from the list at the same time.
       </p>
 
       <h3>Can I filter the list by CEFR level?</h3>
