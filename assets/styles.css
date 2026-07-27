@@ -278,6 +278,26 @@ a:focus-visible {
   color: var(--text);
 }
 
+/* Encadré légal — the boxed notice French law prescribes for the
+   garantie légale de conformité (annexe à l'art. D. 211-4 c. consom.).
+   Must read as a framed box, not as a quotation. */
+.legal .encadre {
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  background: var(--primary-soft);
+  color: var(--text);
+}
+
+.legal .encadre > *:first-child {
+  margin-top: 0;
+}
+
+.legal .encadre > *:last-child {
+  margin-bottom: 0;
+}
+
 .legal table {
   width: 100%;
   border-collapse: collapse;

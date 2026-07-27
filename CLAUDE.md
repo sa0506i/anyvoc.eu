@@ -43,6 +43,7 @@ What does **not** require a date bump:
 | `legal/privacy.html`          | top, after `<h1>`           |
 | `legal/terms.html`            | top, after `<h1>`           |
 | `legal/terms.de.html`         | top, after `<h1>` — label is `Stand:` (German page) |
+| `legal/terms.fr.html`         | top, after `<h1>` — label is `Dernière mise à jour :` |
 | `legal/imprint.html`          | bottom, before `</article>` |
 | `account/delete.html`         | bottom, before `</article>` |
 
