@@ -169,13 +169,12 @@
 
       <h3 id="cefr-reliability">How reliable is the CEFR classification?</h3>
       <p>
-        Anyvoc assigns each word a single CEFR level per language,
-        consistently — the same word always lands in the same
-        bucket. It's accurate enough that B1-tagged words are a
-        reasonable fit for B1 learners; the level is rarely more
-        than one band off. Treat it as a strong default rather
-        than a final judgement — adjust your CEFR filter if a
-        whole batch feels off-level.
+        Anyvoc assigns each word one level per language. Treat it as
+        a well-informed default rather than a final judgement: it's a
+        good guide for aiming your filter, but where exactly the line
+        between two neighbouring bands falls is a judgement call even
+        among teachers. If a whole batch feels off-level, adjust your
+        CEFR filter.
       </p>
 
       <h3>Does Anyvoc come with any starter content?</h3>
@@ -226,10 +225,10 @@
       <h3>Do I need an account?</h3>
       <p>
         Yes — Anyvoc requires an account for ongoing use. Guest mode
-        is meant for trying the app first: you get three guest
-        sessions to evaluate Anyvoc, after which you sign in to keep
-        using it (email OTP, plus Sign in with Apple on iOS and Sign
-        in with Google on Android). A signed-in account is also
+        is meant for trying the app first: you get a limited number of
+        guest sessions to evaluate Anyvoc, after which you sign in to
+        keep using it (email OTP, plus Sign in with Apple on iOS and
+        Sign in with Google on Android). A signed-in account is also
         required for Pro, since the store validates the purchase
         against your sign-in.
       </p>
@@ -243,14 +242,6 @@
         <li><strong>Sign in with Apple</strong> — iOS only.</li>
         <li><strong>Sign in with Google</strong> — Android only.</li>
       </ul>
-
-      <h3>What is the guest-login budget?</h3>
-      <p>
-        At first launch you have three "guest sessions". Each guest
-        session uses one. Once they're all used, you have to sign in to
-        keep using the app. The limit prevents anyone from using the
-        app indefinitely without any identification.
-      </p>
 
       <hr />
 
@@ -346,14 +337,10 @@
       </p>
       <p>
         <strong>1. Language AI is not free for us.</strong> Every
-        time Anyvoc turns an article, a photo of a page, or a
-        note into a vocabulary deck, an AI model runs the
-        analysis — and we get billed per request. One enthusiastic
-        Pro user can comfortably generate dozens of those a day;
-        multiplied across the user base it adds up to a real
-        invoice every month. Pro subscriptions cover that
-        invoice, and let us pick stronger models for paying users
-        instead of rationing access.
+        time Anyvoc turns an article, a photo of a page, or a note
+        into a vocabulary deck, an AI model runs the analysis — and
+        that analysis costs us money. Pro subscriptions are what
+        cover it.
       </p>
       <p>
         <strong>2. Anyvoc is a deliberately small project.</strong>
@@ -381,7 +368,7 @@
       </p>
       <p>
         We want to keep Anyvoc ad-free, but turning your text into
-        vocabulary runs an AI model that bills us per request — so we're
+        vocabulary runs an AI model that costs us money — so we're
         genuinely grateful for every paying subscriber's support, and in
         return you get plenty of value for your own learning.
       </p>
@@ -478,14 +465,13 @@
         better to cancel and take a sharper photo.
       </p>
 
-      <h3>Why does vocabulary extraction take 10–30 seconds?</h3>
+      <h3>Why does vocabulary extraction take a moment?</h3>
       <p>
         Anyvoc has an AI model analyse the text to generate
         vocabulary, translations, and example sentences. Longer
-        passages take longer — for a whole article, expect up to
-        half a minute. The app shows a rotating status hint while
-        it works. Vocabulary, translations, example sentences, and
-        CEFR levels produced this way are AI-generated content.
+        passages take longer. The app shows a rotating status hint
+        while it works. Vocabulary, translations, example sentences,
+        and CEFR levels produced this way are AI-generated content.
       </p>
 
       <h3>How do I control which words get extracted?</h3>
@@ -506,6 +492,13 @@
         <em>"prateleira de bagagem"</em> or <em>"kein Bock haben"</em>.
         Words saved this way are stored whatever the level chips are
         set to. See <a href="#basic-vs-pro">Basic vs Pro</a>.
+      </p>
+
+      <h3>How do I delete a piece of content?</h3>
+      <p>
+        Swipe the content card to the left on the <em>Content</em> tab
+        — the same gesture that deletes a word in the
+        <a href="#vocabulary">vocabulary list</a>.
       </p>
 
       <hr />
@@ -765,10 +758,10 @@
       <p>
         Your stored vocabulary for the learning language you're
         currently using — everything Anyvoc extracted for you plus
-        everything you added yourself. It's the browsing view: look a
-        word up, see what you've collected so far, narrow the view
-        down by level. Training happens on the
-        <a href="#trainer">Trainer</a> tab.
+        everything you added yourself. It's where you look a word up,
+        see what you've collected so far, narrow the view down by
+        level, and fix or remove entries you don't want. Training
+        happens on the <a href="#trainer">Trainer</a> tab.
       </p>
 
       <h3>Where do the words in the list come from?</h3>
@@ -801,6 +794,16 @@
         Yes — tap a word row and your device's text-to-speech engine
         speaks the learning-language word, the same voice the trainer
         cards use. Available on every tier (Guest / Basic / Pro).
+      </p>
+
+      <h3>Can I edit or delete a word?</h3>
+      <p>
+        Yes — swipe a row in the list: left deletes the word, right
+        opens it for editing. Editing is how you fix a
+        translation that came out of extraction wrong, correct a typo
+        in an imported list, or reword an entry into the form you
+        actually want to be tested on. Deleting removes the word from
+        your vocabulary, so it stops coming up in the trainer too.
       </p>
 
       <hr />
@@ -891,7 +894,7 @@
         can review and edit before tapping Save. Up to 100 entries
         per import. Available to every tier, including Guest. (List import is
         <strong>not</strong> the same as Restore Backup — the
-        latter handles full <code>.anyvoc.json</code> snapshots,
+        latter handles full backup snapshots,
         is available to every signed-in account, and goes through a
         single-language picker on Basic if the snapshot covers
         more than one language.)
@@ -907,8 +910,8 @@
       <p>
         <em>Settings → Account → Create / Restore Backup →
         Create backup</em>. You receive a portable file with all
-        vocabulary, content cards, per-row language attribution,
-        and review streak. On another device, restore it via
+        vocabulary, content cards, and review streak. On another
+        device, restore it via
         <em>Restore backup</em> on the same screen. Available to
         every signed-in account (guests: sign in first); on
         Basic, restoring a backup that covers more
@@ -922,11 +925,7 @@
         <li>the server-side sign-in data (email address, tokens, account metadata)</li>
         <li>all local vocabulary, content, and learning progress on this device</li>
       </ul>
-      <p>
-        The action is irreversible. There is intentionally no longer a
-        "Reset App" button — it would let users bypass the guest-login
-        budget.
-      </p>
+      <p>The action is irreversible.</p>
 
       <hr />
 
@@ -945,8 +944,8 @@
 
       <h3>Adding a link says "could not extract content".</h3>
       <p>
-        Some sites are so JavaScript-heavy that the offline extractor
-        finds no readable text. Try:
+        Some sites are so JavaScript-heavy that Anyvoc finds no
+        readable text on the page. Try:
       </p>
       <ul>
         <li>select the text from the page in the original app and share it as text instead of as a link to Anyvoc</li>
